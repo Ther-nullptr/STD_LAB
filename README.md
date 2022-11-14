@@ -21,10 +21,11 @@
 
 ### 开发流程
 
-使用 Git 与 GitHub 进行协作开发的过程中，各个开发组成员应当遵守下面的流程：
+使用 Git 与 GitHub 进行协作开发的过程中，各个成员应当遵守下面的流程：
 
-1. 将 eesast 仓库 fork 到个人 GitHub 仓库中
+1. 将主仓库 fork 到个人 GitHub 仓库中
 2. 创建自己的分支
 3. 进行开发
-4. 将 eesast 仓库 dev 分支的最新进度 pull 到自己的仓库中
-5. 向科协仓库的 dev 分支提出 pull request
+4. 开发取得一定成果时需要commit一次，格式如下：`git commit -m '<messages>'`，需要在message中简要说明开发内容
+5. 将主仓库 dev 分支的最新进度 pull 到自己的仓库中
+6. 向主仓库的 dev 分支提出 pull request
