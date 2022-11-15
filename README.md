@@ -13,6 +13,13 @@
 - [ ] 任务二：基于谱减法的音频噪声处理
 - [ ] 任务三：音视频匹配
 
+## setup
+
+```bash
+conda config --append channels conda-forge  
+conda install --yes --file requirements.txt    
+```
+
 ## notice
 
 ### 文件说明
