@@ -18,7 +18,6 @@ from dataset import VideoFeatDataset as dset
 from tools.config_tools import Config
 from tools import utils
 
-
 parser = OptionParser()
 parser.add_option('--config',
                   type=str,
@@ -45,7 +44,9 @@ print('finished loading data')
 opt.manualSeed = random.randint(1, 10000)
 
 if torch.cuda.is_available() and not opt.cuda:
-    print("WARNING: You have a CUDA device, so you should probably run with \"cuda: True\"")
+    print(
+        "WARNING: You have a CUDA device, so you should probably run with \"cuda: True\""
+    )
     torch.manual_seed(opt.manualSeed)
 else:
     if int(opt.ngpu) == 1:
@@ -61,17 +62,20 @@ print('Random Seed: {0}'.format(opt.manualSeed))
 
 
 #(batchsize,features,sequence)
-def get_triplet(vfeat,afeat):
-    vfeat_var=vfeat
-    afeat_p_var=afeat
+def get_triplet(vfeat, afeat):
+    vfeat_var = vfeat
+    afeat_p_var = afeat
     orders = np.arange(vfeat.size(0)).astype('int32')
     negetive_orders = orders.copy()
     for i in range(len(negetive_orders)):
-        index_list=list(range(i))
-        index_list.extend(list(range(len(negetive_orders))[i+1:]))
-        negetive_orders[i]=index_list[random.randint(0,len(negetive_orders)-2)]
+        index_list = list(range(i))
+        index_list.extend(list(range(len(negetive_orders))[i + 1:]))
+        negetive_orders[i] = index_list[random.randint(
+            0,
+            len(negetive_orders) - 2)]
     afeat_n_var = afeat[torch.from_numpy(negetive_orders).long()].clone()
-    return vfeat_var,afeat_p_var,afeat_n_var
+    return vfeat_var, afeat_p_var, afeat_n_var
+
 
 # training function for metric learning
 def train(train_loader, model, criterion, optimizer, epoch, opt):
@@ -124,8 +128,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
             afeat_var = afeat_var.cuda()
             target_var = target_var.cuda()
 
-        prob=model(vfeat_var,afeat_var)
-        loss=criterion(prob,target_var)
+        prob = model(vfeat_var, afeat_var)
+        loss = criterion(prob, target_var)
         losses.update(loss.item(), vfeat.size(0))
 
         ##############################
@@ -139,7 +143,12 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         batch_time.update(time.time() - end)
         end = time.time()
         if i % opt.print_freq == 0:
-            log_str = 'Epoch: [{0}][{1}/{2}]\t Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t Loss {loss.val:.4f} ({loss.avg:.4f})'.format(epoch, i, len(train_loader), batch_time=batch_time, loss=losses)
+            log_str = 'Epoch: [{0}][{1}/{2}]\t Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t Loss {loss.val:.4f} ({loss.avg:.4f})'.format(
+                epoch,
+                i,
+                len(train_loader),
+                batch_time=batch_time,
+                loss=losses)
             print(log_str)
             print(prob[0], prob[opt.batchSize])
 
@@ -147,8 +156,10 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
 def main():
     global opt
     # train data loader
-    train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=opt.batchSize,
-                                     shuffle=True, num_workers=int(opt.workers))
+    train_loader = torch.utils.data.DataLoader(train_dataset,
+                                               batch_size=opt.batchSize,
+                                               shuffle=True,
+                                               num_workers=int(opt.workers))
 
     # create model
     model = models.FrameByFrame()
@@ -163,15 +174,17 @@ def main():
     optimizer = optim.Adam(model.parameters(), opt.lr)
 
     # adjust learning rate every lr_decay_epoch
-    lambda_lr = lambda epoch: opt.lr_decay ** ((epoch + 1) // opt.lr_decay_epoch)
+    lambda_lr = lambda epoch: opt.lr_decay**((epoch + 1) // opt.lr_decay_epoch)
     scheduler = LR_Policy(optimizer, lambda_lr)
 
     for epoch in range(opt.max_epochs):
         train(train_loader, model, criterion, optimizer, epoch, opt)
         scheduler.step()
-        if ((epoch+1) % opt.epoch_save) == 0:
-            path_checkpoint = '{0}/{1}_state_epoch{2}.pth'.format(opt.checkpoint_folder, opt.prefix, epoch + 1)
+        if ((epoch + 1) % opt.epoch_save) == 0:
+            path_checkpoint = '{0}/{1}_state_epoch{2}.pth'.format(
+                opt.checkpoint_folder, opt.prefix, epoch + 1)
             utils.save_checkpoint(model.state_dict(), path_checkpoint)
+
 
 if __name__ == '__main__':
     main()

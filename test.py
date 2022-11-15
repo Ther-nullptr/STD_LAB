@@ -38,30 +38,29 @@ def get_top(tsample, rst):
     print('Top1 accuracy for sample {} is: {}.'.format(n, top1))
     print('Top5 accuracy for sample {} is: {}.'.format(n, top5))
 
+if __name__ == '__main__':
+    rst = np.zeros((804, 804))
+    vfeats = torch.zeros(804, 512, 10).float()
+    afeats = torch.zeros(804, 128, 10).float()
+    for i in range(804):
+        vfeat = np.load(os.path.join(vpath, '%04d.npy'%i))
+        for j in range(804):
+            vfeats[j] = torch.from_numpy(vfeat).float().permute(1, 0)
+            afeat = np.load(os.path.join(apath, '%04d.npy'%j))
+            afeats[j] = torch.from_numpy(afeat).float().permute(1, 0)
+        with torch.no_grad():
+            out = model(vfeats.cuda(), afeats.cuda())
+        rst[i] = (out[:,1] - out[:,0]).cpu().numpy()
+        print(i)
 
-rst = np.zeros((804, 804))
-vfeats = torch.zeros(804, 512, 10).float()
-afeats = torch.zeros(804, 128, 10).float()
-for i in range(804):
-    vfeat = np.load(os.path.join(vpath, '%04d.npy'%i))
-    for j in range(804):
-        vfeats[j] = torch.from_numpy(vfeat).float().permute(1, 0)
-        afeat = np.load(os.path.join(apath, '%04d.npy'%j))
-        afeats[j] = torch.from_numpy(afeat).float().permute(1, 0)
-    with torch.no_grad():
-        out = model(vfeats.cuda(), afeats.cuda())
-    rst[i] = (out[:,1] - out[:,0]).cpu().numpy()
-    print(i)
+    np.save('rst_epoch{}.npy'.format(epoch), rst)
 
-np.save('rst_epoch{}.npy'.format(epoch), rst)
+    print('Test checkpoint epoch {}.'.format(epoch))
 
+    gen_tsample(50)
 
-print('Test checkpoint epoch {}.'.format(epoch))
-
-gen_tsample(50)
-
-tsample = np.load('tsample_{}.npy'.format(50))
-get_top(tsample, rst)
+    tsample = np.load('tsample_{}.npy'.format(50))
+    get_top(tsample, rst)
 
 
 
