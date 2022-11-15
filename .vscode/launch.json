@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "vggish",
+            "type": "python",
+            "request": "launch",
+            "program": "vggish_test.py",
+            "cwd": "/mnt/c/Users/86181/Desktop/STD-project/test",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+            ]
+        },
+        {
+            "name": "resnet",
+            "type": "python",
+            "request": "launch",
+            "program": "resnet_test.py",
+            "cwd": "/mnt/c/Users/86181/Desktop/STD-project/test",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+            ]
+        },
+    ]
+}
