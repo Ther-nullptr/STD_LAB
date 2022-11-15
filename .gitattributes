@@ -14,6 +14,9 @@
 *.ico   binary
 *.jpeg  binary
 *.jfif  binary
+*.mp4  binary
+*.npy  binary
+*.wav  binary
 
 ###############################################################################
 # diff behavior for common document formats
