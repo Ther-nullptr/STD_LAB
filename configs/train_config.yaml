@@ -1,7 +1,7 @@
 cuda: True
 ngpu: 1
 gpu_id: '0'
-workers: 4
+workers: 0
 batchSize: 64
 lr: 0.001
 lr_decay: 0.9

@@ -1,0 +1,5 @@
+cuda: True
+epoch: 90
+vpath: 'data/Test/vfeat'
+apath: 'data/Test/afeat'
+prefix: 'VA_METRIC'
