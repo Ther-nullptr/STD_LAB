@@ -18,61 +18,19 @@ from dataset import VideoFeatDataset as dset
 from tools.config_tools import Config
 from tools import utils
 
-parser = OptionParser()
-parser.add_option('--config',
-                  type=str,
-                  help="training configuration",
-                  default="./configs/train_config.yaml")
 
-(opts, args) = parser.parse_args()
-assert isinstance(opts, object)
-opt = Config(opts.config)
-print(opt)
-
-if opt.checkpoint_folder is None:
-    opt.checkpoint_folder = 'checkpoints'
-
-# make dir
-if not os.path.exists(opt.checkpoint_folder):
-    os.system('mkdir {0}'.format(opt.checkpoint_folder))
-
-train_dataset = dset('Train')
-
-print('number of train samples is: {0}'.format(len(train_dataset)))
-print('finished loading data')
-
-opt.manualSeed = random.randint(1, 10000)
-
-if torch.cuda.is_available() and not opt.cuda:
-    print(
-        "WARNING: You have a CUDA device, so you should probably run with \"cuda: True\""
-    )
-    torch.manual_seed(opt.manualSeed)
-else:
-    if int(opt.ngpu) == 1:
-        print('so we use 1 gpu to training')
-        print('setting gpu on gpuid {0}'.format(opt.gpu_id))
-
-        if opt.cuda:
-            torch.cuda.set_device(int(opt.gpu_id))
-            #os.environ['CUDA_VISIBLE_DEVICES'] = opt.gpu_id
-            torch.cuda.manual_seed(opt.manualSeed)
-            cudnn.benchmark = True
-print('Random Seed: {0}'.format(opt.manualSeed))
-
-
-#(batchsize,features,sequence)
+# (batchsize, features, sequence)
 def get_triplet(vfeat, afeat):
     vfeat_var = vfeat
     afeat_p_var = afeat
     orders = np.arange(vfeat.size(0)).astype('int32')
     negetive_orders = orders.copy()
+    
     for i in range(len(negetive_orders)):
         index_list = list(range(i))
         index_list.extend(list(range(len(negetive_orders))[i + 1:]))
-        negetive_orders[i] = index_list[random.randint(
-            0,
-            len(negetive_orders) - 2)]
+        negetive_orders[i] = index_list[random.randint(0, len(negetive_orders) - 2)]
+    
     afeat_n_var = afeat[torch.from_numpy(negetive_orders).long()].clone()
     return vfeat_var, afeat_p_var, afeat_n_var
 
@@ -86,8 +44,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
     losses = utils.AverageMeter()
 
     model.train()
-
     end = time.time()
+    
     for i, (vfeat, afeat) in enumerate(train_loader):
         bz = vfeat.size()[0]
         orders = np.arange(bz).astype('int32')
@@ -97,12 +55,12 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         afeat2 = afeat[torch.from_numpy(shuffle_orders).long()].clone()
 
         # concat the vfeat and afeat respectively
-        afeat0 = torch.cat((afeat, afeat2), 0)
-        vfeat0 = torch.cat((vfeat, vfeat), 0)
+        afeat0 = torch.cat((afeat, afeat2), 0) #! batch * 2
+        vfeat0 = torch.cat((vfeat, vfeat), 0) #! use video to match audio
 
         # generating the labels
         # 1. the labels for the shuffled feats
-        label1 = (orders == shuffle_orders + 0).astype('int32')
+        label1 = (orders == shuffle_orders).astype('int32')
         target1 = torch.from_numpy(label1).long()
 
         # 2. the labels for the original feats
@@ -114,8 +72,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         target = torch.cat((target2, target1), 0)
 
         # transpose the feats
-        vfeat0 = vfeat0.transpose(2, 1)
-        afeat0 = afeat0.transpose(2, 1)
+        vfeat0 = vfeat0.transpose(2, 1) #! [batch * 2, 512, 10]
+        afeat0 = afeat0.transpose(2, 1) #! [batch * 2, 128, 10]
 
         # put the data into Variable
         vfeat_var = Variable(vfeat0)
@@ -153,8 +111,49 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
             print(prob[0], prob[opt.batchSize])
 
 
-def main():
-    global opt
+if __name__ == '__main__':
+    parser = OptionParser()
+    parser.add_option('--config',
+                    type=str,
+                    help="training configuration",
+                    default="./configs/train_config.yaml")
+
+    (opts, args) = parser.parse_args()
+    assert isinstance(opts, object)
+    opt = Config(opts.config)
+    print(opt)
+
+    if opt.checkpoint_folder is None:
+        opt.checkpoint_folder = 'checkpoints'
+
+    # make dir
+    if not os.path.exists(opt.checkpoint_folder):
+        os.system('mkdir {0}'.format(opt.checkpoint_folder))
+
+    train_dataset = dset('Train')
+
+    print('number of train samples is: {0}'.format(len(train_dataset)))
+    print('finished loading data')
+
+    opt.manualSeed = random.randint(1, 10000)
+
+    if torch.cuda.is_available() and not opt.cuda:
+        print(
+            "WARNING: You have a CUDA device, so you should probably run with \"cuda: True\""
+        )
+        torch.manual_seed(opt.manualSeed)
+
+    else:
+        if int(opt.ngpu) == 1:
+            print('so we use 1 gpu to training')
+            print('setting gpu on gpuid {0}'.format(opt.gpu_id))
+            if opt.cuda:
+                torch.cuda.set_device(int(opt.gpu_id))
+                torch.cuda.manual_seed(opt.manualSeed)
+                cudnn.benchmark = True
+
+    print('Random Seed: {0}'.format(opt.manualSeed))
+
     # train data loader
     train_loader = torch.utils.data.DataLoader(train_dataset,
                                                batch_size=opt.batchSize,
@@ -174,7 +173,7 @@ def main():
     optimizer = optim.Adam(model.parameters(), opt.lr)
 
     # adjust learning rate every lr_decay_epoch
-    lambda_lr = lambda epoch: opt.lr_decay**((epoch + 1) // opt.lr_decay_epoch)
+    lambda_lr = lambda epoch: opt.lr_decay ** ((epoch + 1) // opt.lr_decay_epoch)
     scheduler = LR_Policy(optimizer, lambda_lr)
 
     for epoch in range(opt.max_epochs):
@@ -184,7 +183,3 @@ def main():
             path_checkpoint = '{0}/{1}_state_epoch{2}.pth'.format(
                 opt.checkpoint_folder, opt.prefix, epoch + 1)
             utils.save_checkpoint(model.state_dict(), path_checkpoint)
-
-
-if __name__ == '__main__':
-    main()
