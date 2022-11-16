@@ -17,8 +17,8 @@ class Match(nn.Module):
     def init_params(self):
         for m in self.modules():
             if isinstance(m, nn.Linear):
-                nn.init.xavier_normal(m.weight)
-                nn.init.constant(m.bias, 0)
+                nn.init.xavier_normal_(m.weight)
+                nn.init.constant_(m.bias, 0)
 
     def forward(self, feat):
         feat = F.relu(self.fc1(feat))
@@ -38,8 +38,8 @@ class Prob(nn.Module):
     def init_params(self):
         for m in self.modules():
             if isinstance(m, nn.Linear):
-                nn.init.xavier_normal(m.weight)
-                nn.init.constant(m.bias, 0)
+                nn.init.xavier_normal_(m.weight)
+                nn.init.constant_(m.bias, 0)
 
     def forward(self, feat):
         feat = F.relu(self.fc1(feat))
@@ -48,11 +48,13 @@ class Prob(nn.Module):
 
 
 class FrameByFrame(nn.Module):
-    def __init__(self,
-                 Vinput_size=512,
-                 Ainput_size=128,
-                 output_size=64,
-                 layers_num=3):
+    def __init__(
+                    self,
+                    Vinput_size = 512,
+                    Ainput_size = 128,
+                    output_size = 64,
+                    layers_num = 3
+                ):
         super(FrameByFrame, self).__init__()
         self.Vinput_size = Vinput_size
         self.Ainput_size = Ainput_size
@@ -73,18 +75,21 @@ class FrameByFrame(nn.Module):
         c_0 = Variable(torch.zeros(self.layers_num, Afeat.size(0),
                                    self.output_size),
                        requires_grad=False)
+
         if Vfeat.is_cuda:
             h_0 = h_0.cuda()
             c_0 = c_0.cuda()
+        
         outAfeat, _ = self.AFeatRNN((Afeat / 255.0).permute(2, 0, 1),
-                                    (h_0, c_0))
+                                    (h_0, c_0)) #! [10, 1, 64] [frames, batch, length]
+
+        prob = 0 #! outAfeat [10, 1, 64]  Vfeat [1, 512, 10]
+
         for i in range(10):
             Afeats = self.Amatching(outAfeat[i, :, :])
-            Vfeats = self.Vmatching(Vfeat[:, :, i])
-            feat = torch.cat((Afeats, Vfeats), dim=1)
-            if i == 0:
-                prob = self.Prob(feat)
-            else:
-                prob = prob + self.Prob(feat)
+            Vfeats = self.Vmatching(Vfeat[:, :, i]) #! sample the ith afeat/vfeat
+            feat = torch.cat((Afeats, Vfeats), dim = 1) #! Afeats: [1, 64]  Vfeats: [1, 64]  feat: [1, 128]
+            prob = prob + self.Prob(feat)
+
         prob = prob / 10
         return prob

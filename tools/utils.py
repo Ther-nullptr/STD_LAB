@@ -14,9 +14,9 @@ class AverageMeter(object):
         self.sum = 0
         self.count = 0
 
-    def update(self, val, n=1):
+    def update(self, val, n = 1):
         self.val = val
-        self.sum += val * n # val*n: how many samples predicted correctly among the n samples
+        self.sum += val * n # val * n: how many samples predicted correctly among the n samples
         self.count += n     # totoal samples has been through
         self.avg = self.sum / self.count
 

@@ -218,3 +218,29 @@ ResNet(
 ```
 
 视频特征的提取用到[cv2.VideoCapture](https://www.cnblogs.com/GreenHands/p/12619759.html)。
+
+## 11.16
+
+### Method: MatchNet
+
+首先需要确定feature的数据格式：
+audio: int16   video: float32
+
+网络架构：
+```log
+FrameByFrame(
+  (AFeatRNN): LSTM(128, 64, num_layers=3)
+  (Amatching): Match(
+    (fc1): Linear(in_features=64, out_features=64, bias=True)
+    (fc2): Linear(in_features=64, out_features=64, bias=True)
+  )
+  (Vmatching): Match(
+    (fc1): Linear(in_features=512, out_features=64, bias=True)
+    (fc2): Linear(in_features=64, out_features=64, bias=True)
+  )
+  (Prob): Prob(
+    (fc1): Linear(in_features=128, out_features=64, bias=True)
+    (fc2): Linear(in_features=64, out_features=2, bias=True)
+  )
+)
+```

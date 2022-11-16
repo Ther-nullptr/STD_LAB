@@ -23,5 +23,16 @@
             "args": [
             ]
         },
+        {
+            "name": "matchnet",
+            "type": "python",
+            "request": "launch",
+            "program": "matchmodel_test.py",
+            "cwd": "/mnt/c/Users/86181/Desktop/STD-project/test",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+            ]
+        },
     ]
 }
