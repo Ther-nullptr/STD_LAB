@@ -1,0 +1,10 @@
+# model
+model: ResNet34Extractor
+pretrained: False # whether to load pretrained model
+local_model: False # whether to load the local model params
+
+# dir
+dirname: 'feat/videofeat'
+
+# device
+cuda: False # whether to use GPU

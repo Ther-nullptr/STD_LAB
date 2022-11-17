@@ -1,5 +1,15 @@
-cuda: True
+# model
+model: FrameByFrame
+
+# device
+cuda: False
+
+# checkpoint
 epoch: 90
+
+# data path
 vpath: 'data/Test/vfeat'
 apath: 'data/Test/afeat'
+
+# name
 prefix: 'VA_METRIC'

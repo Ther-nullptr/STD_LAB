@@ -1,13 +1,35 @@
+# model
+model: FrameByFrame
+
+# device
 cuda: True
 ngpu: 1
 gpu_id: '0'
+
+# dataloader
 workers: 0
 batchSize: 64
+
+# learning rate
 lr: 0.001
 lr_decay: 0.9
 lr_decay_epoch: 30
+
+# data path
+vpath: 'data/Train/vfeat'
+apath: 'data/Train/afeat'
+
+# epochs
 max_epochs: 100
-print_freq: 15
 epoch_save: 10
-checkpoint_folder: ./checkpoints
+
+# save
+print_freq: 15
+checkpoint_folder: 'checkpoints'
+log_folder: 'log'
 prefix: 'VA_METRIC'
+
+# model
+model: FramebyFrame
+use_ckpt: True
+ckpt_path: None
