@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+
+import logging
 import random
 import time
+import sys
 import os
 import numpy as np
 from optparse import OptionParser
@@ -13,11 +16,12 @@ import torch.optim as optim
 from torch.autograd import Variable
 from torch.optim.lr_scheduler import LambdaLR as LR_Policy
 
-import models
+import models.match_net
 from dataset import VideoFeatDataset as dset
 from tools.config_tools import Config
 from tools import utils
 
+logger = logging.getLogger(__name__)
 
 # (batchsize, features, sequence)
 def get_triplet(vfeat, afeat):
@@ -25,12 +29,12 @@ def get_triplet(vfeat, afeat):
     afeat_p_var = afeat
     orders = np.arange(vfeat.size(0)).astype('int32')
     negetive_orders = orders.copy()
-    
+
     for i in range(len(negetive_orders)):
         index_list = list(range(i))
         index_list.extend(list(range(len(negetive_orders))[i + 1:]))
         negetive_orders[i] = index_list[random.randint(0, len(negetive_orders) - 2)]
-    
+
     afeat_n_var = afeat[torch.from_numpy(negetive_orders).long()].clone()
     return vfeat_var, afeat_p_var, afeat_n_var
 
@@ -40,12 +44,20 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
     """
     train for one epoch on the training set
     """
+    logging.basicConfig(
+        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+        filename=opt.log_folder + str(opt),
+        datefmt="%Y-%m-%d %H:%M:%S",
+        level=os.environ.get("LOGLEVEL", "INFO").upper(),
+        stream=sys.stdout,
+    )
+
     batch_time = utils.AverageMeter()
     losses = utils.AverageMeter()
 
     model.train()
     end = time.time()
-    
+
     for i, (vfeat, afeat) in enumerate(train_loader):
         bz = vfeat.size()[0]
         orders = np.arange(bz).astype('int32')
@@ -55,8 +67,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         afeat2 = afeat[torch.from_numpy(shuffle_orders).long()].clone()
 
         # concat the vfeat and afeat respectively
-        afeat0 = torch.cat((afeat, afeat2), 0) #! batch * 2
-        vfeat0 = torch.cat((vfeat, vfeat), 0) #! use video to match audio
+        afeat0 = torch.cat((afeat, afeat2), 0)  #! batch * 2
+        vfeat0 = torch.cat((vfeat, vfeat), 0)  #! use video to match audio
 
         # generating the labels
         # 1. the labels for the shuffled feats
@@ -72,8 +84,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         target = torch.cat((target2, target1), 0)
 
         # transpose the feats
-        vfeat0 = vfeat0.transpose(2, 1) #! [batch * 2, 512, 10]
-        afeat0 = afeat0.transpose(2, 1) #! [batch * 2, 128, 10]
+        vfeat0 = vfeat0.transpose(2, 1)  #! [batch * 2, 512, 10]
+        afeat0 = afeat0.transpose(2, 1)  #! [batch * 2, 128, 10]
 
         # put the data into Variable
         vfeat_var = Variable(vfeat0)
@@ -107,16 +119,16 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
                 len(train_loader),
                 batch_time=batch_time,
                 loss=losses)
-            print(log_str)
-            print(prob[0], prob[opt.batchSize])
+            logger.info(log_str)
+            logger.info(prob[0], prob[opt.batchSize])
 
 
 if __name__ == '__main__':
     parser = OptionParser()
     parser.add_option('--config',
-                    type=str,
-                    help="training configuration",
-                    default="./configs/train_config.yaml")
+                      type=str,
+                      help="training configuration",
+                      default="./configs/train_config.yaml")
 
     (opts, args) = parser.parse_args()
     assert isinstance(opts, object)
@@ -161,7 +173,11 @@ if __name__ == '__main__':
                                                num_workers=int(opt.workers))
 
     # create model
-    model = models.FrameByFrame()
+    if hasattr(models.match_net, opt.model):
+        model_class = getattr(models.match_net, opt.model)
+        model = model_class()
+    else:
+        raise ModuleNotFoundError(f"No implementation of {opt.model}")
 
     criterion = torch.nn.CrossEntropyLoss()
     if opt.cuda:
@@ -173,7 +189,7 @@ if __name__ == '__main__':
     optimizer = optim.Adam(model.parameters(), opt.lr)
 
     # adjust learning rate every lr_decay_epoch
-    lambda_lr = lambda epoch: opt.lr_decay ** ((epoch + 1) // opt.lr_decay_epoch)
+    lambda_lr = lambda epoch: opt.lr_decay**((epoch + 1) // opt.lr_decay_epoch)
     scheduler = LR_Policy(optimizer, lambda_lr)
 
     for epoch in range(opt.max_epochs):

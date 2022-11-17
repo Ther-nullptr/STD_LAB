@@ -2,5 +2,6 @@ __pycache__
 *.npz
 *.pth
 
+params/
 data/
 !data/README.md
