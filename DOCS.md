@@ -248,3 +248,21 @@ FrameByFrame(
 ## 11.17 
 
 Python代码规范：https://zhuanlan.zhihu.com/p/383418209
+
+## 11.18
+
+audio model:
+* vggish: baseline
+* LSTM: small & efficient
+* HuBERT
+* data2vec: sota of ASR tasks
+
+video model:
+* resnet101: baseline
+* swin-transformer: a high efficient vision transformer
+* DeiT
+* A-ViT 
+
+STD大作业毕竟是要刷点的，所以不得不使用大的预训练模型（本来想试一试轻量级模型的），条件允许的话，将考虑使用这些模型的large model ckpt。
+
+考虑模型融合+特征工程
