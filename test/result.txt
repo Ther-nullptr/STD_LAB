@@ -2782,3 +2782,1092 @@ Probility: 8.776942253112793
 Predicted class: mezzo-soprano, mezzo
 Probility: 8.581164360046387
 0253.mp4.png
+Predicted class: Uniat, Uniate, Uniate_Christian
+Probility: 10.816933631896973
+Predicted class: theodolite, transit
+Probility: 10.127012252807617
+Predicted class: lie_detector
+Probility: 9.055006980895996
+Predicted class: pentathlete
+Probility: 8.967873573303223
+Predicted class: gitano
+Probility: 8.723901748657227
+0254.mp4.png
+Predicted class: fly_casting
+Probility: 10.98626708984375
+Predicted class: fishing_rod, fishing_pole
+Probility: 10.117465019226074
+Predicted class: casting, cast
+Probility: 9.939079284667969
+Predicted class: reef_knot, flat_knot
+Probility: 9.26300048828125
+Predicted class: fly_rod
+Probility: 8.730925559997559
+0255.mp4.png
+Predicted class: Korean
+Probility: 10.43645191192627
+Predicted class: speaker, talker, utterer, verbalizer, verbaliser
+Probility: 10.044763565063477
+Predicted class: Aryan
+Probility: 9.572351455688477
+Predicted class: city_slicker, city_boy
+Probility: 9.06257438659668
+Predicted class: Zairese, Zairean
+Probility: 8.908987998962402
+0256.mp4.png
+Predicted class: negative
+Probility: 10.917512893676758
+Predicted class: theater, theatre, house
+Probility: 10.48659896850586
+Predicted class: stadium, bowl, arena, sports_stadium
+Probility: 9.955769538879395
+Predicted class: lighting
+Probility: 9.86266040802002
+Predicted class: propulsion_system
+Probility: 8.820122718811035
+0257.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.726700782775879
+Predicted class: disco, discotheque
+Probility: 8.120013236999512
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 7.979123115539551
+Predicted class: tripod
+Probility: 7.718360424041748
+Predicted class: esker
+Probility: 7.658263683319092
+0258.mp4.png
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 9.746185302734375
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 9.53800106048584
+Predicted class: hill
+Probility: 9.26844310760498
+Predicted class: harborage, harbourage
+Probility: 8.65669059753418
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.579507827758789
+0259.mp4.png
+Predicted class: strip_mall
+Probility: 11.23679256439209
+Predicted class: black, blackness, inkiness
+Probility: 10.90896987915039
+Predicted class: backlighting
+Probility: 10.88492202758789
+Predicted class: sunniness
+Probility: 10.561436653137207
+Predicted class: swastika, Hakenkreuz
+Probility: 10.140321731567383
+0260.mp4.png
+Predicted class: matriculate
+Probility: 8.520292282104492
+Predicted class: minder
+Probility: 8.440967559814453
+Predicted class: Aryan
+Probility: 8.360268592834473
+Predicted class: supermom
+Probility: 8.3490571975708
+Predicted class: Khedive
+Probility: 8.216190338134766
+0261.mp4.png
+Predicted class: ball_carrier, runner
+Probility: 10.675048828125
+Predicted class: choker
+Probility: 10.635499954223633
+Predicted class: dallier, dillydallier, dilly-dallier, mope, lounger
+Probility: 10.004046440124512
+Predicted class: acrobatics, tumbling
+Probility: 8.939992904663086
+Predicted class: greenish_blue, aqua, aquamarine, turquoise, cobalt_blue, peacock_blue
+Probility: 8.468759536743164
+0262.mp4.png
+Predicted class: slasher
+Probility: 10.158346176147461
+Predicted class: cinema, movie_theater, movie_theatre, movie_house, picture_palace
+Probility: 9.461297035217285
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 7.446135520935059
+Predicted class: slattern, slut, slovenly_woman, trollop
+Probility: 7.425109386444092
+Predicted class: assembly
+Probility: 7.392736911773682
+0263.mp4.png
+Predicted class: Toda
+Probility: 8.949545860290527
+Predicted class: sarcophagus
+Probility: 8.912385940551758
+Predicted class: perspirer, sweater
+Probility: 8.517253875732422
+Predicted class: old_lady
+Probility: 8.385597229003906
+Predicted class: nonsmoker
+Probility: 8.262054443359375
+0264.mp4.png
+Predicted class: Jordanian
+Probility: 8.891534805297852
+Predicted class: Sabine
+Probility: 8.807244300842285
+Predicted class: Carib, Carib_Indian
+Probility: 8.786820411682129
+Predicted class: prepuce, foreskin
+Probility: 8.536933898925781
+Predicted class: WASP, white_Anglo-Saxon_Protestant
+Probility: 8.51884937286377
+0265.mp4.png
+Predicted class: display_window, shop_window, shopwindow, show_window
+Probility: 10.270668983459473
+Predicted class: ambulance
+Probility: 9.16189193725586
+Predicted class: Hakham
+Probility: 8.793938636779785
+Predicted class: vambrace, lower_cannon
+Probility: 8.649728775024414
+Predicted class: cash_machine, cash_dispenser, automated_teller_machine, automatic_teller_machine, automated_teller, automatic_teller, ATM
+Probility: 8.51031494140625
+0266.mp4.png
+Predicted class: Shavian
+Probility: 9.690776824951172
+Predicted class: press_agent, publicity_man, public_relations_man, PR_man
+Probility: 8.507476806640625
+Predicted class: Omani
+Probility: 8.092286109924316
+Predicted class: assembly
+Probility: 7.886666297912598
+Predicted class: Aegean_island
+Probility: 7.878353118896484
+0267.mp4.png
+Predicted class: professional_wrestling
+Probility: 9.122258186340332
+Predicted class: law_agent
+Probility: 9.0008544921875
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 8.69895076751709
+Predicted class: Khedive
+Probility: 8.17920207977295
+Predicted class: chambermaid, fille_de_chambre
+Probility: 8.164527893066406
+0268.mp4.png
+Predicted class: toxicologist
+Probility: 9.881378173828125
+Predicted class: mezzo-soprano, mezzo
+Probility: 9.578969955444336
+Predicted class: Aryan
+Probility: 9.18066120147705
+Predicted class: old_lady
+Probility: 8.94015884399414
+Predicted class: salesgirl, saleswoman, saleslady
+Probility: 8.441458702087402
+0269.mp4.png
+Predicted class: burro
+Probility: 9.609549522399902
+Predicted class: oil_paint
+Probility: 9.074649810791016
+Predicted class: German_shepherd, German_shepherd_dog, German_police_dog, alsatian
+Probility: 8.860958099365234
+Predicted class: wild_horse
+Probility: 8.650870323181152
+Predicted class: tripod
+Probility: 8.378454208374023
+0270.mp4.png
+Predicted class: magus
+Probility: 12.077378273010254
+Predicted class: gunnery_sergeant
+Probility: 11.395793914794922
+Predicted class: gryphon, griffin, griffon
+Probility: 11.279289245605469
+Predicted class: myope
+Probility: 10.538736343383789
+Predicted class: falsifier
+Probility: 10.415116310119629
+0271.mp4.png
+Predicted class: Hakham
+Probility: 10.639447212219238
+Predicted class: television_monitor, tv_monitor
+Probility: 10.017656326293945
+Predicted class: color_television, colour_television, color_television_system, colour_television_system, color_TV, colour_TV
+Probility: 9.063718795776367
+Predicted class: newspaper, paper
+Probility: 8.623186111450195
+Predicted class: subway_token
+Probility: 8.617653846740723
+0272.mp4.png
+Predicted class: teletypewriter, teleprinter, teletype_machine, telex, telex_machine
+Probility: 10.166535377502441
+Predicted class: television_monitor, tv_monitor
+Probility: 9.12911319732666
+Predicted class: cable_television, cable
+Probility: 9.118497848510742
+Predicted class: home_theater, home_theatre
+Probility: 9.079891204833984
+Predicted class: television_equipment, video_equipment
+Probility: 8.662461280822754
+0273.mp4.png
+Predicted class: center_of_curvature, centre_of_curvature
+Probility: 11.32480239868164
+Predicted class: silver_plate
+Probility: 8.02569580078125
+Predicted class: face_veil
+Probility: 7.905069351196289
+Predicted class: window_frame
+Probility: 7.718404769897461
+Predicted class: burlap, gunny
+Probility: 7.610361576080322
+0274.mp4.png
+Predicted class: refrigeration_system
+Probility: 9.518521308898926
+Predicted class: nude, nude_painting
+Probility: 9.163996696472168
+Predicted class: oven
+Probility: 8.920198440551758
+Predicted class: mirror
+Probility: 8.634639739990234
+Predicted class: blackboard, chalkboard
+Probility: 8.594511032104492
+0275.mp4.png
+Predicted class: sparring_partner, sparring_mate
+Probility: 11.35070514678955
+Predicted class: speaker, talker, utterer, verbalizer, verbaliser
+Probility: 10.91616153717041
+Predicted class: optimist
+Probility: 10.069656372070312
+Predicted class: old_lady
+Probility: 9.510879516601562
+Predicted class: restrainer, controller
+Probility: 9.124921798706055
+0276.mp4.png
+Predicted class: oil_paint
+Probility: 9.489328384399414
+Predicted class: smokehouse, meat_house
+Probility: 8.961837768554688
+Predicted class: face_veil
+Probility: 8.10627555847168
+Predicted class: nude, nude_painting
+Probility: 8.022235870361328
+Predicted class: head_covering, veil
+Probility: 7.990307331085205
+0277.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 10.659178733825684
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 10.211750030517578
+Predicted class: sunniness
+Probility: 9.283172607421875
+Predicted class: seaplane, hydroplane
+Probility: 9.216355323791504
+Predicted class: backlighting
+Probility: 9.117456436157227
+0278.mp4.png
+Predicted class: Toda
+Probility: 11.267036437988281
+Predicted class: tiler
+Probility: 10.021077156066895
+Predicted class: Amhara
+Probility: 9.855103492736816
+Predicted class: upsetter
+Probility: 9.236592292785645
+Predicted class: Sabahan
+Probility: 8.742121696472168
+0279.mp4.png
+Predicted class: delegate
+Probility: 10.33910083770752
+Predicted class: preserver
+Probility: 9.24864387512207
+Predicted class: presentist
+Probility: 9.20157527923584
+Predicted class: attendant, attender, tender
+Probility: 9.001850128173828
+Predicted class: Ted, Teddy_boy
+Probility: 8.953153610229492
+0280.mp4.png
+Predicted class: mustachio, moustachio, handle-bars
+Probility: 9.005435943603516
+Predicted class: Omani
+Probility: 8.873188972473145
+Predicted class: ancestor, ascendant, ascendent, antecedent, root
+Probility: 8.726139068603516
+Predicted class: Ted, Teddy_boy
+Probility: 8.604778289794922
+Predicted class: trail_boss
+Probility: 8.567826271057129
+0281.mp4.png
+Predicted class: Hakham
+Probility: 10.2076416015625
+Predicted class: television_monitor, tv_monitor
+Probility: 8.80109691619873
+Predicted class: New_Dealer
+Probility: 8.79049015045166
+Predicted class: speaker, talker, utterer, verbalizer, verbaliser
+Probility: 8.627969741821289
+Predicted class: chat_room, chatroom
+Probility: 8.155143737792969
+0282.mp4.png
+Predicted class: microphone, mike
+Probility: 9.621377944946289
+Predicted class: gryphon, griffin, griffon
+Probility: 8.92512035369873
+Predicted class: reliever, allayer, comforter
+Probility: 8.80160140991211
+Predicted class: gunnery_sergeant
+Probility: 8.469884872436523
+Predicted class: muffin_man
+Probility: 8.237736701965332
+0283.mp4.png
+Predicted class: nurse
+Probility: 6.907289505004883
+Predicted class: pet
+Probility: 6.740328311920166
+Predicted class: tripod
+Probility: 6.181650161743164
+Predicted class: television_monitor, tv_monitor
+Probility: 5.99816370010376
+Predicted class: pig_bed, pig
+Probility: 5.990394115447998
+0284.mp4.png
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 10.01563549041748
+Predicted class: concert
+Probility: 9.892448425292969
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 9.52355670928955
+Predicted class: tripod
+Probility: 8.653803825378418
+Predicted class: black, blackness, inkiness
+Probility: 8.551390647888184
+0285.mp4.png
+Predicted class: tripod
+Probility: 9.799141883850098
+Predicted class: lodestone, loadstone
+Probility: 9.172542572021484
+Predicted class: baseball_club, ball_club, club, nine
+Probility: 8.997482299804688
+Predicted class: concert
+Probility: 8.989636421203613
+Predicted class: mold, mould
+Probility: 8.637639045715332
+0286.mp4.png
+Predicted class: preserver
+Probility: 11.236002922058105
+Predicted class: city_slicker, city_boy
+Probility: 10.583924293518066
+Predicted class: Amhara
+Probility: 10.408636093139648
+Predicted class: first_baseman, first_sacker
+Probility: 10.20872688293457
+Predicted class: Levantine
+Probility: 9.981483459472656
+0287.mp4.png
+Predicted class: black_tie
+Probility: 9.291637420654297
+Predicted class: flagellant
+Probility: 9.125974655151367
+Predicted class: maestro, master
+Probility: 8.735336303710938
+Predicted class: bow_tie, bow-tie, bowtie
+Probility: 8.723075866699219
+Predicted class: old_man
+Probility: 8.490157127380371
+0288.mp4.png
+Predicted class: successor, replacement
+Probility: 11.459049224853516
+Predicted class: Uniat, Uniate, Uniate_Christian
+Probility: 11.284195899963379
+Predicted class: Kashmiri
+Probility: 10.239572525024414
+Predicted class: mufti
+Probility: 9.326652526855469
+Predicted class: gunnery_sergeant
+Probility: 9.27458667755127
+0289.mp4.png
+Predicted class: master, captain, sea_captain, skipper
+Probility: 11.390713691711426
+Predicted class: John_Doe
+Probility: 9.507298469543457
+Predicted class: Amhara
+Probility: 9.419573783874512
+Predicted class: starter, dispatcher
+Probility: 9.31036376953125
+Predicted class: noncommissioned_officer, noncom, enlisted_officer
+Probility: 8.378410339355469
+0290.mp4.png
+Predicted class: assembly
+Probility: 12.136547088623047
+Predicted class: John_Doe
+Probility: 11.275453567504883
+Predicted class: rape_suspect
+Probility: 10.264673233032227
+Predicted class: Jehovah's_Witness
+Probility: 9.162386894226074
+Predicted class: rescuer, recoverer, saver
+Probility: 9.098282814025879
+0291.mp4.png
+Predicted class: trail_boss
+Probility: 9.860132217407227
+Predicted class: messmate
+Probility: 9.629419326782227
+Predicted class: wastrel, waster
+Probility: 9.529989242553711
+Predicted class: ancestor, ascendant, ascendent, antecedent, root
+Probility: 8.643104553222656
+Predicted class: tabloid, rag, sheet
+Probility: 8.561443328857422
+0292.mp4.png
+Predicted class: master, captain, sea_captain, skipper
+Probility: 10.794113159179688
+Predicted class: maestro, master
+Probility: 9.493078231811523
+Predicted class: television_camera, tv_camera, camera
+Probility: 9.49018669128418
+Predicted class: sparring_partner, sparring_mate
+Probility: 9.27725887298584
+Predicted class: theater, theatre, house
+Probility: 9.225654602050781
+0293.mp4.png
+Predicted class: cliff, drop, drop-off
+Probility: 8.95849323272705
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.22578239440918
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.033982276916504
+Predicted class: graining, woodgraining
+Probility: 7.9289727210998535
+Predicted class: whistle
+Probility: 7.052979469299316
+0294.mp4.png
+Predicted class: poodle, poodle_dog
+Probility: 11.473072052001953
+Predicted class: schnauzer
+Probility: 10.584022521972656
+Predicted class: large_poodle
+Probility: 10.444769859313965
+Predicted class: Lakeland_terrier
+Probility: 10.333422660827637
+Predicted class: standard_poodle
+Probility: 10.294411659240723
+0295.mp4.png
+Predicted class: oolong
+Probility: 7.207571029663086
+Predicted class: boat
+Probility: 7.179619312286377
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 7.1079277992248535
+Predicted class: window_frame
+Probility: 6.923476696014404
+Predicted class: ripple_mark
+Probility: 6.6038818359375
+0296.mp4.png
+Predicted class: hutch
+Probility: 11.889690399169922
+Predicted class: rabbit_ears
+Probility: 11.726091384887695
+Predicted class: chicken_coop, coop, hencoop, henhouse
+Probility: 10.884363174438477
+Predicted class: henroost
+Probility: 10.504191398620605
+Predicted class: postulant
+Probility: 10.36002254486084
+0297.mp4.png
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 9.569419860839844
+Predicted class: whistle
+Probility: 8.868606567382812
+Predicted class: cliff, drop, drop-off
+Probility: 7.812370300292969
+Predicted class: color_wash, colour_wash
+Probility: 7.803761959075928
+Predicted class: graining, woodgraining
+Probility: 7.341616153717041
+0298.mp4.png
+Predicted class: crimson, ruby, deep_red
+Probility: 10.415904998779297
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 9.957327842712402
+Predicted class: beige, ecru
+Probility: 9.88443374633789
+Predicted class: fuschia
+Probility: 9.064075469970703
+Predicted class: Turkey_red, alizarine_red
+Probility: 9.012895584106445
+0299.mp4.png
+Predicted class: sage_green
+Probility: 6.504282474517822
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 6.402459621429443
+Predicted class: drumlin
+Probility: 6.391811847686768
+Predicted class: pendulum
+Probility: 6.19813346862793
+Predicted class: figure_skating
+Probility: 6.029616355895996
+0300.mp4.png
+Predicted class: table-tennis_racquet, table-tennis_bat, pingpong_paddle
+Probility: 8.355202674865723
+Predicted class: spot
+Probility: 7.702391624450684
+Predicted class: concert
+Probility: 7.587856292724609
+Predicted class: coffee_table, cocktail_table
+Probility: 7.504770755767822
+Predicted class: black, blackness, inkiness
+Probility: 7.501221179962158
+0301.mp4.png
+Predicted class: sheepwalk, sheeprun
+Probility: 9.057342529296875
+Predicted class: cur, mongrel, mutt
+Probility: 8.72625732421875
+Predicted class: setter
+Probility: 8.443814277648926
+Predicted class: dog, domestic_dog, Canis_familiaris
+Probility: 8.43331527709961
+Predicted class: Irish_setter, red_setter
+Probility: 8.392364501953125
+0302.mp4.png
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 7.996108531951904
+Predicted class: grinner
+Probility: 7.876673698425293
+Predicted class: roulette, line_roulette
+Probility: 7.8586812019348145
+Predicted class: black, blackness, inkiness
+Probility: 7.800471782684326
+Predicted class: whistle
+Probility: 7.671919822692871
+0303.mp4.png
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 10.366080284118652
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 10.222824096679688
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 8.899581909179688
+Predicted class: negative
+Probility: 8.523148536682129
+Predicted class: sunniness
+Probility: 8.417223930358887
+0304.mp4.png
+Predicted class: cur, mongrel, mutt
+Probility: 11.042461395263672
+Predicted class: truncated_pyramid
+Probility: 10.735279083251953
+Predicted class: pooch, doggie, doggy, barker, bow-wow
+Probility: 10.368066787719727
+Predicted class: dog, domestic_dog, Canis_familiaris
+Probility: 9.965937614440918
+Predicted class: hop
+Probility: 9.96076488494873
+0305.mp4.png
+Predicted class: Weimaraner
+Probility: 10.542232513427734
+Predicted class: pinscher
+Probility: 10.520478248596191
+Predicted class: German_shepherd, German_shepherd_dog, German_police_dog, alsatian
+Probility: 10.430326461791992
+Predicted class: Doberman, Doberman_pinscher
+Probility: 10.264781951904297
+Predicted class: cur, mongrel, mutt
+Probility: 9.923751831054688
+0306.mp4.png
+Predicted class: harmonica, mouth_organ, harp, mouth_harp
+Probility: 9.661696434020996
+Predicted class: computer_keyboard, keypad
+Probility: 9.378840446472168
+Predicted class: laptop, laptop_computer
+Probility: 8.627506256103516
+Predicted class: justiciar, justiciary
+Probility: 8.426684379577637
+Predicted class: keyboard
+Probility: 8.423479080200195
+0307.mp4.png
+Predicted class: gusher
+Probility: 11.463579177856445
+Predicted class: borzoi, Russian_wolfhound
+Probility: 10.166800498962402
+Predicted class: fountain
+Probility: 9.079819679260254
+Predicted class: springboard
+Probility: 8.73656177520752
+Predicted class: factory, mill, manufacturing_plant, manufactory
+Probility: 8.288592338562012
+0308.mp4.png
+Predicted class: amphipod
+Probility: 8.387518882751465
+Predicted class: ameba, amoeba
+Probility: 7.894989967346191
+Predicted class: radio_compass
+Probility: 7.645861625671387
+Predicted class: space_shuttle
+Probility: 7.50056791305542
+Predicted class: hood, bonnet, cowl, cowling
+Probility: 7.459798336029053
+0309.mp4.png
+Predicted class: screen, CRT_screen
+Probility: 9.71407699584961
+Predicted class: sloth_bear, Melursus_ursinus, Ursus_ursinus
+Probility: 8.814035415649414
+Predicted class: orangutan, orang, orangutang, Pongo_pygmaeus
+Probility: 8.555886268615723
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 8.417119026184082
+Predicted class: storm_cellar, cyclone_cellar, tornado_cellar
+Probility: 8.400481224060059
+0310.mp4.png
+Predicted class: cliff, drop, drop-off
+Probility: 8.660058975219727
+Predicted class: grinner
+Probility: 8.358965873718262
+Predicted class: spiritual_leader
+Probility: 8.187560081481934
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 8.014945983886719
+Predicted class: concert
+Probility: 8.013996124267578
+0311.mp4.png
+Predicted class: comfit
+Probility: 12.32400894165039
+Predicted class: nude, nude_painting
+Probility: 9.349469184875488
+Predicted class: rut
+Probility: 8.814888954162598
+Predicted class: squawk_box, squawker, intercom_speaker
+Probility: 8.754814147949219
+Predicted class: center_of_curvature, centre_of_curvature
+Probility: 8.708576202392578
+0312.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 11.798356056213379
+Predicted class: radio_compass
+Probility: 8.631563186645508
+Predicted class: sea_cow, sirenian_mammal, sirenian
+Probility: 8.575554847717285
+Predicted class: cellophane
+Probility: 8.178144454956055
+Predicted class: clumber, clumber_spaniel
+Probility: 7.897119045257568
+0313.mp4.png
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 11.150928497314453
+Predicted class: drawing_chalk
+Probility: 9.567845344543457
+Predicted class: green_algae, chlorophyte
+Probility: 9.083260536193848
+Predicted class: spit, tongue
+Probility: 8.97634220123291
+Predicted class: concert
+Probility: 8.914608001708984
+0314.mp4.png
+Predicted class: cur, mongrel, mutt
+Probility: 10.361513137817383
+Predicted class: soft-coated_wheaten_terrier
+Probility: 10.06884765625
+Predicted class: Lhasa, Lhasa_apso
+Probility: 9.874344825744629
+Predicted class: Maltese_dog, Maltese_terrier, Maltese
+Probility: 9.745421409606934
+Predicted class: Shih-Tzu
+Probility: 9.659093856811523
+0315.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 10.274415969848633
+Predicted class: negative
+Probility: 9.538092613220215
+Predicted class: concert
+Probility: 9.3029146194458
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.858196258544922
+Predicted class: olive
+Probility: 8.517759323120117
+0316.mp4.png
+Predicted class: understudy, standby
+Probility: 9.240351676940918
+Predicted class: nude, nude_painting
+Probility: 8.82778263092041
+Predicted class: bicycling
+Probility: 8.661993980407715
+Predicted class: uneven_parallel_bars, uneven_bars
+Probility: 8.57913875579834
+Predicted class: bicycle, bike, wheel, cycle
+Probility: 8.538386344909668
+0317.mp4.png
+Predicted class: Aberdeen_Angus, Angus, black_Angus
+Probility: 11.102734565734863
+Predicted class: fairground
+Probility: 9.612593650817871
+Predicted class: cow, moo-cow
+Probility: 9.190646171569824
+Predicted class: cow
+Probility: 9.037548065185547
+Predicted class: bull
+Probility: 8.843257904052734
+0318.mp4.png
+Predicted class: shoreline
+Probility: 9.104643821716309
+Predicted class: plug_fuse
+Probility: 8.891082763671875
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.598066329956055
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 8.516509056091309
+Predicted class: windowsill
+Probility: 8.024177551269531
+0319.mp4.png
+Predicted class: pod, fuel_pod
+Probility: 8.210675239562988
+Predicted class: swimsuit, swimwear, bathing_suit, swimming_costume, bathing_costume
+Probility: 7.648030757904053
+Predicted class: springboard
+Probility: 7.423666000366211
+Predicted class: cupule, acorn_cup
+Probility: 7.400262832641602
+Predicted class: pollard
+Probility: 7.269045829772949
+0320.mp4.png
+Predicted class: cur, mongrel, mutt
+Probility: 11.058635711669922
+Predicted class: pooch, doggie, doggy, barker, bow-wow
+Probility: 9.718591690063477
+Predicted class: bitch
+Probility: 8.676831245422363
+Predicted class: domestic_animal, domesticated_animal
+Probility: 8.634764671325684
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 8.57020092010498
+0321.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 10.964856147766113
+Predicted class: wattle_and_daub
+Probility: 10.753209114074707
+Predicted class: turnspit
+Probility: 8.95646858215332
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.428485870361328
+Predicted class: black, blackness, inkiness
+Probility: 7.232394695281982
+0322.mp4.png
+Predicted class: radio_compass
+Probility: 8.442473411560059
+Predicted class: cylinder
+Probility: 7.988896369934082
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 7.93914794921875
+Predicted class: berm
+Probility: 7.8840651512146
+Predicted class: spindle
+Probility: 7.774398326873779
+0323.mp4.png
+Predicted class: hyena, hyaena
+Probility: 10.40975284576416
+Predicted class: spotted_hyena, laughing_hyena, Crocuta_crocuta
+Probility: 9.359821319580078
+Predicted class: ski_resort
+Probility: 9.15334701538086
+Predicted class: silver_plate
+Probility: 9.144698143005371
+Predicted class: negative
+Probility: 9.085857391357422
+0324.mp4.png
+Predicted class: Norwich_terrier
+Probility: 11.678245544433594
+Predicted class: Norfolk_terrier
+Probility: 10.275151252746582
+Predicted class: German_shepherd, German_shepherd_dog, German_police_dog, alsatian
+Probility: 9.744850158691406
+Predicted class: cur, mongrel, mutt
+Probility: 9.224578857421875
+Predicted class: canine, canid
+Probility: 9.176201820373535
+0325.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.95124340057373
+Predicted class: barbasco, joewood, Jacquinia_keyensis
+Probility: 8.594921112060547
+Predicted class: timothy, herd's_grass, Phleum_pratense
+Probility: 7.549607753753662
+Predicted class: mold, mould
+Probility: 7.4708452224731445
+Predicted class: aura, aureole, halo, nimbus, glory, gloriole
+Probility: 7.417825698852539
+0326.mp4.png
+Predicted class: tripod
+Probility: 7.894732475280762
+Predicted class: negative
+Probility: 7.737793445587158
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 7.019859790802002
+Predicted class: backlighting
+Probility: 6.989658832550049
+Predicted class: hookah, narghile, nargileh, sheesha, shisha, chicha, calean, kalian, water_pipe, hubble-bubble, hubbly-bubbly
+Probility: 6.938405990600586
+0327.mp4.png
+Predicted class: English_setter
+Probility: 9.702497482299805
+Predicted class: leash, tether, lead
+Probility: 9.247922897338867
+Predicted class: cur, mongrel, mutt
+Probility: 9.212854385375977
+Predicted class: wolfhound
+Probility: 9.078487396240234
+Predicted class: soft-coated_wheaten_terrier
+Probility: 8.892280578613281
+0328.mp4.png
+Predicted class: microwave, microwave_oven
+Probility: 10.797501564025879
+Predicted class: spacecraft, ballistic_capsule, space_vehicle
+Probility: 9.980262756347656
+Predicted class: air_conditioner, air_conditioning
+Probility: 9.257467269897461
+Predicted class: television_monitor, tv_monitor
+Probility: 9.165144920349121
+Predicted class: teletypewriter, teleprinter, teletype_machine, telex, telex_machine
+Probility: 9.064796447753906
+0329.mp4.png
+Predicted class: spiritual_leader
+Probility: 9.53976821899414
+Predicted class: face_veil
+Probility: 9.533051490783691
+Predicted class: head_covering, veil
+Probility: 9.064058303833008
+Predicted class: Cavalier, Royalist
+Probility: 8.54123306274414
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.43757438659668
+0330.mp4.png
+Predicted class: cur, mongrel, mutt
+Probility: 11.43463134765625
+Predicted class: whippet
+Probility: 10.823159217834473
+Predicted class: Italian_greyhound
+Probility: 10.724108695983887
+Predicted class: mouser
+Probility: 10.010918617248535
+Predicted class: domestic_cat, house_cat, Felis_domesticus, Felis_catus
+Probility: 9.838041305541992
+0331.mp4.png
+Predicted class: brown_bat
+Probility: 11.801709175109863
+Predicted class: bat, chiropteran
+Probility: 11.049775123596191
+Predicted class: little_brown_bat, little_brown_myotis, Myotis_leucifugus
+Probility: 11.045476913452148
+Predicted class: pipistrelle, pipistrel, Pipistrellus_pipistrellus
+Probility: 10.919795036315918
+Predicted class: renal_cortex
+Probility: 10.021899223327637
+0332.mp4.png
+Predicted class: golden_retriever
+Probility: 10.37363052368164
+Predicted class: dog, domestic_dog, Canis_familiaris
+Probility: 10.268064498901367
+Predicted class: borzoi, Russian_wolfhound
+Probility: 10.068321228027344
+Predicted class: pooch, doggie, doggy, barker, bow-wow
+Probility: 9.858453750610352
+Predicted class: Angora, Angora_goat
+Probility: 9.559349060058594
+0333.mp4.png
+Predicted class: sloth_bear, Melursus_ursinus, Ursus_ursinus
+Probility: 10.305265426635742
+Predicted class: grinner
+Probility: 8.995113372802734
+Predicted class: grocer
+Probility: 8.99173641204834
+Predicted class: critter
+Probility: 8.135913848876953
+Predicted class: windmill
+Probility: 8.119908332824707
+0334.mp4.png
+Predicted class: nude, nude_painting
+Probility: 9.755447387695312
+Predicted class: sheepwalk, sheeprun
+Probility: 8.815741539001465
+Predicted class: bedclothes, bed_clothing, bedding
+Probility: 8.675915718078613
+Predicted class: brassiere, bra, bandeau
+Probility: 7.9058732986450195
+Predicted class: kitten, kitty
+Probility: 7.858551502227783
+0335.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 9.95105266571045
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 9.896303176879883
+Predicted class: esker
+Probility: 9.19072151184082
+Predicted class: cliff, drop, drop-off
+Probility: 9.046568870544434
+Predicted class: ptyalith
+Probility: 8.819867134094238
+0336.mp4.png
+Predicted class: nude, nude_painting
+Probility: 9.199321746826172
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.542121887207031
+Predicted class: caldera
+Probility: 7.739367961883545
+Predicted class: colostrum, foremilk
+Probility: 7.623665809631348
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 7.454955101013184
+0337.mp4.png
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 12.513092994689941
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 10.796649932861328
+Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
+Probility: 9.312705993652344
+Predicted class: wattle_and_daub
+Probility: 8.70644760131836
+Predicted class: locoweed, crazyweed, crazy_weed
+Probility: 8.677397727966309
+0338.mp4.png
+Predicted class: poodle, poodle_dog
+Probility: 9.933956146240234
+Predicted class: English_setter
+Probility: 9.667482376098633
+Predicted class: large_poodle
+Probility: 9.628904342651367
+Predicted class: snow_leopard, ounce, Panthera_uncia
+Probility: 9.345064163208008
+Predicted class: pooch, doggie, doggy, barker, bow-wow
+Probility: 9.132669448852539
+0339.mp4.png
+Predicted class: Komodo_dragon, Komodo_lizard, dragon_lizard, giant_lizard, Varanus_komodoensis
+Probility: 10.117344856262207
+Predicted class: Shih-Tzu
+Probility: 10.081626892089844
+Predicted class: center_of_curvature, centre_of_curvature
+Probility: 9.850204467773438
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 9.349756240844727
+Predicted class: carcase, carcass
+Probility: 9.265924453735352
+0340.mp4.png
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.263439178466797
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 7.47990608215332
+Predicted class: cliff, drop, drop-off
+Probility: 6.849231243133545
+Predicted class: shrike
+Probility: 6.622852802276611
+Predicted class: black_grouse
+Probility: 6.603309631347656
+0341.mp4.png
+Predicted class: domestic_animal, domesticated_animal
+Probility: 11.482455253601074
+Predicted class: chicken, Gallus_gallus
+Probility: 10.441479682922363
+Predicted class: Yorkshire_terrier
+Probility: 10.34184455871582
+Predicted class: pooch, doggie, doggy, barker, bow-wow
+Probility: 10.151273727416992
+Predicted class: Shih-Tzu
+Probility: 10.149298667907715
+0342.mp4.png
+Predicted class: shade, tint, tincture, tone
+Probility: 9.836274147033691
+Predicted class: tugboat, tug, towboat, tower
+Probility: 9.053237915039062
+Predicted class: feather_boa, boa
+Probility: 8.895042419433594
+Predicted class: hairpiece, false_hair, postiche
+Probility: 8.756272315979004
+Predicted class: ballet_skirt, tutu
+Probility: 8.727782249450684
+0343.mp4.png
+Predicted class: sage_green
+Probility: 9.662348747253418
+Predicted class: negative
+Probility: 9.358772277832031
+Predicted class: stockbroker_belt
+Probility: 9.226951599121094
+Predicted class: alley_cat
+Probility: 9.082362174987793
+Predicted class: olive_green, olive-green
+Probility: 8.61708927154541
+0344.mp4.png
+Predicted class: cur, mongrel, mutt
+Probility: 9.604915618896484
+Predicted class: kitten, kitty
+Probility: 9.084123611450195
+Predicted class: pet
+Probility: 9.050946235656738
+Predicted class: feline, felid
+Probility: 8.971087455749512
+Predicted class: canine, canid
+Probility: 8.875524520874023
+0345.mp4.png
+Predicted class: stealth_fighter
+Probility: 8.842782020568848
+Predicted class: livestock, stock, farm_animal
+Probility: 8.35880184173584
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 8.283598899841309
+Predicted class: chick, biddy
+Probility: 8.137036323547363
+Predicted class: saucepot
+Probility: 7.994569778442383
+0346.mp4.png
+Predicted class: radio_compass
+Probility: 10.716920852661133
+Predicted class: clothes_dryer, clothes_drier
+Probility: 10.23001480102539
+Predicted class: Xerox, xerographic_copier, Xerox_machine
+Probility: 9.201394081115723
+Predicted class: spindle
+Probility: 8.778510093688965
+Predicted class: negative
+Probility: 8.561834335327148
+0347.mp4.png
+Predicted class: cheesecloth
+Probility: 9.314271926879883
+Predicted class: screen, CRT_screen
+Probility: 9.232327461242676
+Predicted class: mosquito_net
+Probility: 8.773075103759766
+Predicted class: gauze, netting, veiling
+Probility: 8.508614540100098
+Predicted class: head_covering, veil
+Probility: 8.116065979003906
+0348.mp4.png
+Predicted class: wattle_and_daub
+Probility: 9.834759712219238
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 9.724234580993652
+Predicted class: grinner
+Probility: 9.564950942993164
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 9.176472663879395
+Predicted class: grocer
+Probility: 8.510765075683594
+0349.mp4.png
+Predicted class: color_television, colour_television, color_television_system, colour_television_system, color_TV, colour_TV
+Probility: 10.931060791015625
+Predicted class: computer_screen, computer_display
+Probility: 10.773113250732422
+Predicted class: screen
+Probility: 10.196271896362305
+Predicted class: television_monitor, tv_monitor
+Probility: 10.13001537322998
+Predicted class: teletypewriter, teleprinter, teletype_machine, telex, telex_machine
+Probility: 9.667573928833008
+0350.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 11.281598091125488
+Predicted class: smokehouse, meat_house
+Probility: 8.828296661376953
+Predicted class: censer, thurible
+Probility: 8.826513290405273
+Predicted class: hookah, narghile, nargileh, sheesha, shisha, chicha, calean, kalian, water_pipe, hubble-bubble, hubbly-bubbly
+Probility: 8.493558883666992
+Predicted class: schnauzer
+Probility: 8.474892616271973
+0351.mp4.png
+Predicted class: oolong
+Probility: 10.218938827514648
+Predicted class: roulette, line_roulette
+Probility: 10.022785186767578
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 9.632798194885254
+Predicted class: ripple_mark
+Probility: 9.370622634887695
+Predicted class: fountain
+Probility: 9.327621459960938
+0352.mp4.png

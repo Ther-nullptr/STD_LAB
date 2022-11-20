@@ -1,5 +1,7 @@
 # model
 model: FrameByFrame
+use_ckpt: True
+ckpt_path: None
 
 # device
 cuda: True
@@ -16,8 +18,8 @@ lr_decay: 0.9
 lr_decay_epoch: 30
 
 # data path
-vpath: 'data/Train/vfeat'
-apath: 'data/Train/afeat'
+vpath: 'data/Dataset/Train/vfeat/resnet-101'
+apath: 'data/Dataset/Train/afeat/vggish-quant'
 
 # epochs
 max_epochs: 100
@@ -28,8 +30,3 @@ print_freq: 15
 checkpoint_folder: 'checkpoints'
 log_folder: 'log'
 prefix: 'VA_METRIC'
-
-# model
-model: FramebyFrame
-use_ckpt: True
-ckpt_path: None

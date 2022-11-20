@@ -2,14 +2,12 @@
 model: FrameByFrame
 
 # device
-cuda: False
-
-# checkpoint
-epoch: 90
+cuda: True
 
 # data path
-vpath: 'data/Test/vfeat'
-apath: 'data/Test/afeat'
+type: Clean
+vpath: 'data/Dataset/Test/Clean/vfeat/resnet-101'
+apath: 'data/Dataset/Test/Clean/afeat/vggish-quant'
 
 # name
-prefix: 'VA_METRIC'
+ckpt_name: modelFrameByFramebatchSize64lr0.001vpathresnet-101apathvggish-quantmax_epochs100

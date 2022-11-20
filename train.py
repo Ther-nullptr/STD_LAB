@@ -218,6 +218,5 @@ if __name__ == '__main__':
         train(train_loader, model, criterion, optimizer, epoch, opt)
         scheduler.step()
         if ((epoch + 1) % opt.epoch_save) == 0:
-            path_checkpoint = '{0}/{1}_state_epoch{2}.pth'.format(
-                opt.checkpoint_folder, opt.prefix, epoch + 1)
+            path_checkpoint = f'{opt.checkpoint_folder}/{wandb_string}_state_epoch{epoch + 1}.pth'
             utils.save_checkpoint(model.state_dict(), path_checkpoint)
