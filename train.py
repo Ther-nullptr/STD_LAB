@@ -194,7 +194,7 @@ if __name__ == '__main__':
     # logger settings
     afeat_name = os.path.split(opt.apath)[1]
     vfeat_name = os.path.split(opt.vpath)[1]
-    wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs) + 'dropout_ratio' + str(opt.dropout_ratio)
+    wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs) + 'dropout_ratio' + str(opt.dropout_ratio) + 'comment' + str(opt.comment)
     wandb.init(project = 'train', name = wandb_string, reinit = True, entity = "ther")
 
     logger.setLevel(level = logging.INFO)

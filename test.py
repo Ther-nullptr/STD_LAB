@@ -12,7 +12,7 @@ from tools.config_tools import Config
 def gen_tsample(n, root_path):
     tsample = np.zeros((500, n)).astype(np.int16)
     for i in range(500):
-        tsample[i] = np.random.permutation(804)[:n]
+        tsample[i] = np.random.permutation(data_num)[:n]
     np.save(f'{root_path}/tsample_{n}.npy', tsample)
 
 
@@ -69,13 +69,14 @@ if __name__ == '__main__':
 
     wandb.init(project = 'test', name = opt.ckpt_name, reinit = True, entity = "ther")
 
-    rst = np.zeros((804, 804))
-    vfeats = torch.zeros(804, 512, 10).float()
-    afeats = torch.zeros(804, 128, 10).float()
+    data_num = len(os.listdir(opt.vpath))
+    rst = np.zeros((data_num, data_num))
+    vfeats = torch.zeros(data_num, 512, 10).float()
+    afeats = torch.zeros(data_num, 128, 10).float()
 
-    for i in tqdm(range(804)):
+    for i in tqdm(range(data_num)):
         vfeat = np.load(os.path.join(vpath, '%04d.npy' % i))
-        for j in range(804):
+        for j in range(data_num):
             vfeats[j] = torch.from_numpy(vfeat).float().permute(1, 0)
             afeat = np.load(os.path.join(apath, '%04d.npy' % j))
             afeats[j] = torch.from_numpy(afeat).float().permute(1, 0)

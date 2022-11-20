@@ -1,6 +1,6 @@
 # model
 model: FrameByFrame
-dropout_ratio: 0.3
+dropout_ratio: 0.0
 use_ckpt: True
 ckpt_path: None
 
@@ -19,8 +19,8 @@ lr_decay: 0.9
 lr_decay_epoch: 30
 
 # data path
-vpath: 'data/Dataset/Train/vfeat/resnet-101'
-apath: 'data/Dataset/Train/afeat/vggish-quant'
+vpath: 'data/Dataset/Train_Part/vfeat/resnet-101'
+apath: 'data/Dataset/Train_Part/afeat/vggish-quant'
 
 # epochs
 max_epochs: 100
@@ -31,3 +31,6 @@ print_freq: 15
 checkpoint_folder: 'checkpoints'
 log_folder: 'log'
 prefix: 'VA_METRIC'
+
+# comment
+comment: '0.1pos'
