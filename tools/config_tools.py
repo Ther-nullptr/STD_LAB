@@ -8,7 +8,7 @@ class Config(object):
             for doc in docs:
                 for k, v in doc.items():
                     cmd = "self." + k + "=" + repr(v)
-                    self.string += (k + "=" + repr(v) + '_')
+                    self.string += (k + "=" + repr(v) + ' ')
                     print(cmd)
                     exec(cmd)
 

@@ -1,6 +1,6 @@
 import torch
 
-from vggish_model.vggish import VGGish
+from .vggish_model.vggish import VGGish
 from .audio_extractor import AudioExtractor
 
 class VggishExtractor(AudioExtractor):

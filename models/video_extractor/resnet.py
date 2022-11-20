@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from torchvision.models import resnet34, ResNet34_Weights, resnet101, ResNet101_Weights
+from torchvision.models import resnet34, resnet101
 
 from .video_extractor import VideoExtractor
 

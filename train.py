@@ -4,11 +4,13 @@ from __future__ import print_function
 
 import logging
 import random
+import wandb
 import time
 import sys
 import os
 import numpy as np
 from optparse import OptionParser
+from datetime import datetime
 
 import torch
 import torch.backends.cudnn as cudnn
@@ -44,14 +46,6 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
     """
     train for one epoch on the training set
     """
-    logging.basicConfig(
-        format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-        filename=opt.log_folder + str(opt),
-        datefmt="%Y-%m-%d %H:%M:%S",
-        level=os.environ.get("LOGLEVEL", "INFO").upper(),
-        stream=sys.stdout,
-    )
-
     batch_time = utils.AverageMeter()
     losses = utils.AverageMeter()
 
@@ -100,7 +94,11 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
 
         prob = model(vfeat_var, afeat_var)
         loss = criterion(prob, target_var)
+
         losses.update(loss.item(), vfeat.size(0))
+
+        predict_var = torch.argmax(prob, dim = 1)
+        train_acc = sum(predict_var == target_var) / len(target_var)
 
         ##############################
         # compute gradient and do sgd
@@ -120,7 +118,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
                 batch_time=batch_time,
                 loss=losses)
             logger.info(log_str)
-            logger.info(prob[0], prob[opt.batchSize])
+            logger.info(f'train_acc:{train_acc}')
+            wandb.log({'epoch':epoch, 'loss':loss, 'train_acc':train_acc})
 
 
 if __name__ == '__main__':
@@ -142,7 +141,7 @@ if __name__ == '__main__':
     if not os.path.exists(opt.checkpoint_folder):
         os.system('mkdir {0}'.format(opt.checkpoint_folder))
 
-    train_dataset = dset('Train')
+    train_dataset = dset(opt.vpath, opt.apath)
 
     print('number of train samples is: {0}'.format(len(train_dataset)))
     print('finished loading data')
@@ -192,6 +191,29 @@ if __name__ == '__main__':
     lambda_lr = lambda epoch: opt.lr_decay**((epoch + 1) // opt.lr_decay_epoch)
     scheduler = LR_Policy(optimizer, lambda_lr)
 
+    # logger settings
+    afeat_name = os.path.split(opt.apath)[1]
+    vfeat_name = os.path.split(opt.vpath)[1]
+    wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs)
+    wandb.init(project = 'train', name = wandb_string, reinit = True, entity = "ther")
+
+    logger.setLevel(level = logging.INFO)
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(filename)s : %(lineno)s line - %(message)s")
+
+    log_file_name = os.path.join(opt.log_folder, wandb_string)
+    file_handler = logging.FileHandler(filename=f'{log_file_name}.log')
+    file_handler.setFormatter(formatter)
+    file_handler.setLevel(level = logging.INFO)
+    logger.addHandler(file_handler)
+
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+    stream_handler.setLevel(level = logging.INFO)
+    logger.addHandler(stream_handler)
+
+    logger.info(str(opt))
+
+    # train for every epoch
     for epoch in range(opt.max_epochs):
         train(train_loader, model, criterion, optimizer, epoch, opt)
         scheduler.step()

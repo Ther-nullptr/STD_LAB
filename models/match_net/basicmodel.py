@@ -91,5 +91,5 @@ class FrameByFrame(nn.Module):
             feat = torch.cat((Afeats, Vfeats), dim = 1) #! Afeats: [1, 64]  Vfeats: [1, 64]  feat: [1, 128]
             prob = prob + self.Prob(feat)
 
-        prob = prob / 10
+        prob = prob / 10 #! [128, 2]
         return prob
