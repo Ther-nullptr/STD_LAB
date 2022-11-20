@@ -1,7 +1,11 @@
 __pycache__
 *.npz
 *.pth
+*.log
 
 params/
 data/
+wandb/
+result/
+*.txt
 !data/README.md
