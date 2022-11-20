@@ -2276,3 +2276,187 @@ Probility: 8.28396224975586
 Predicted class: chocolate, coffee, deep_brown, umber, burnt_umber
 Probility: 8.193745613098145
 0207.mp4.png
+Predicted class: flower_girl
+Probility: 14.114827156066895
+Predicted class: flute, transverse_flute
+Probility: 11.287322044372559
+Predicted class: nose_flute
+Probility: 9.997416496276855
+Predicted class: examiner, tester, quizzer
+Probility: 9.737752914428711
+Predicted class: pennywhistle, tin_whistle, whistle
+Probility: 9.506799697875977
+0208.mp4.png
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 9.583613395690918
+Predicted class: black, blackness, inkiness
+Probility: 9.358010292053223
+Predicted class: negative
+Probility: 9.029974937438965
+Predicted class: plane_figure, two-dimensional_figure
+Probility: 8.887514114379883
+Predicted class: snowcap
+Probility: 8.820950508117676
+0209.mp4.png
+Predicted class: hill
+Probility: 9.003151893615723
+Predicted class: coalface
+Probility: 8.82558822631836
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 8.672595024108887
+Predicted class: barbasco, joewood, Jacquinia_keyensis
+Probility: 8.543893814086914
+Predicted class: feed_grain
+Probility: 8.444344520568848
+0210.mp4.png
+Predicted class: flower_girl
+Probility: 13.497541427612305
+Predicted class: flute, transverse_flute
+Probility: 12.665669441223145
+Predicted class: examiner, tester, quizzer
+Probility: 9.842355728149414
+Predicted class: fipple_flute, fipple_pipe, recorder, vertical_flute
+Probility: 8.747639656066895
+Predicted class: son, boy
+Probility: 8.410691261291504
+0211.mp4.png
+Predicted class: accordion, piano_accordion, squeeze_box
+Probility: 9.001615524291992
+Predicted class: mold, mould
+Probility: 8.945844650268555
+Predicted class: old_lady
+Probility: 8.351213455200195
+Predicted class: examiner, tester, quizzer
+Probility: 8.30981159210205
+Predicted class: Sudanese
+Probility: 8.2132568359375
+0212.mp4.png
+Predicted class: railroad_bed
+Probility: 12.172066688537598
+Predicted class: abutment
+Probility: 11.070977210998535
+Predicted class: trace_detector
+Probility: 11.065447807312012
+Predicted class: overpass, flyover
+Probility: 10.824796676635742
+Predicted class: roach_clip, roach_holder
+Probility: 8.872892379760742
+0213.mp4.png
+Predicted class: center_of_curvature, centre_of_curvature
+Probility: 9.374610900878906
+Predicted class: Cavalier, Royalist
+Probility: 8.416608810424805
+Predicted class: incisure, incisura
+Probility: 8.018745422363281
+Predicted class: rib
+Probility: 7.525683879852295
+Predicted class: world, human_race, humanity, humankind, human_beings, humans, mankind, man
+Probility: 7.44032096862793
+0214.mp4.png
+Predicted class: black_box
+Probility: 12.587946891784668
+Predicted class: external_drive
+Probility: 10.78973388671875
+Predicted class: digital_clock
+Probility: 10.485066413879395
+Predicted class: appliance, contraption, contrivance, convenience, gadget, gizmo, gismo, widget
+Probility: 10.094315528869629
+Predicted class: clock_radio
+Probility: 9.649581909179688
+0215.mp4.png
+Predicted class: snowcap
+Probility: 12.567249298095703
+Predicted class: dust_storm, duster, sandstorm, sirocco
+Probility: 11.740745544433594
+Predicted class: hyacinth, jacinth
+Probility: 11.224492073059082
+Predicted class: snorkel
+Probility: 9.823548316955566
+Predicted class: car_tire, automobile_tire, auto_tire, rubber_tire
+Probility: 9.586867332458496
+0216.mp4.png
+Predicted class: guest_worker, guestworker
+Probility: 10.885685920715332
+Predicted class: acoustic_guitar
+Probility: 10.77773380279541
+Predicted class: fingerboard
+Probility: 9.996718406677246
+Predicted class: examiner, tester, quizzer
+Probility: 9.916605949401855
+Predicted class: fret
+Probility: 9.29460620880127
+0217.mp4.png
+Predicted class: barbasco, joewood, Jacquinia_keyensis
+Probility: 11.59133243560791
+Predicted class: pale_yellow, straw, wheat
+Probility: 9.751485824584961
+Predicted class: magnetic_pole
+Probility: 9.729928016662598
+Predicted class: barrio
+Probility: 9.57120132446289
+Predicted class: sheep
+Probility: 9.220465660095215
+0218.mp4.png
+Predicted class: speaker, talker, utterer, verbalizer, verbaliser
+Probility: 10.686161041259766
+Predicted class: master, captain, sea_captain, skipper
+Probility: 9.84337329864502
+Predicted class: optimist
+Probility: 9.697981834411621
+Predicted class: sparring_partner, sparring_mate
+Probility: 9.079243659973145
+Predicted class: man
+Probility: 9.00739860534668
+0219.mp4.png
+Predicted class: steam_iron
+Probility: 12.97980785369873
+Predicted class: steam_chest
+Probility: 11.646955490112305
+Predicted class: locomotive, engine, locomotive_engine, railway_locomotive
+Probility: 11.270252227783203
+Predicted class: pilot_cloth
+Probility: 10.724930763244629
+Predicted class: tank_destroyer
+Probility: 10.181146621704102
+0220.mp4.png
+Predicted class: emerald
+Probility: 10.222038269042969
+Predicted class: tripod
+Probility: 9.78273868560791
+Predicted class: concert
+Probility: 9.360225677490234
+Predicted class: chromatic_color, chromatic_colour, spectral_color, spectral_colour
+Probility: 8.681832313537598
+Predicted class: oil_paint
+Probility: 8.371493339538574
+0221.mp4.png
+Predicted class: smoker, smoking_car, smoking_carriage, smoking_compartment
+Probility: 9.554414749145508
+Predicted class: Stoker, Bram_Stoker, Abraham_Stoker
+Probility: 9.521467208862305
+Predicted class: target_acquisition_system
+Probility: 9.41015338897705
+Predicted class: airfield, landing_field, flying_field, field
+Probility: 9.347732543945312
+Predicted class: shopping_basket
+Probility: 8.86755084991455
+0222.mp4.png
+Predicted class: New_Dealer
+Probility: 11.865853309631348
+Predicted class: ancestor, ascendant, ascendent, antecedent, root
+Probility: 11.313262939453125
+Predicted class: television_monitor, tv_monitor
+Probility: 11.094206809997559
+Predicted class: radio, radiocommunication, wireless
+Probility: 9.888211250305176
+Predicted class: color_television, colour_television, color_television_system, colour_television_system, color_TV, colour_TV
+Probility: 9.82824420928955
+0223.mp4.png
+Predicted class: envelope
+Probility: 8.75501537322998
+Predicted class: extrados
+Probility: 8.67178726196289
+Predicted class: window
+Probility: 8.666598320007324
+Predicted class: Hakham
+Probility: 8.659818649291992

@@ -1,5 +1,6 @@
 # model
 model: FrameByFrame
+dropout_ratio: 0.3
 use_ckpt: True
 ckpt_path: None
 

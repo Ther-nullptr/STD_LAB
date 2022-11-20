@@ -48,14 +48,7 @@ class Prob(nn.Module):
 
 
 class FrameByFrame(nn.Module):
-    def __init__(
-                    self,
-                    Vinput_size = 512,
-                    Ainput_size = 128,
-                    output_size = 64,
-                    layers_num = 3
-                ):
-                
+    def __init__(self, Vinput_size = 512, Ainput_size = 128, output_size = 64, layers_num = 3, dropout_ratio = 0.3):
         super(FrameByFrame, self).__init__()
         self.Vinput_size = Vinput_size
         self.Ainput_size = Ainput_size
@@ -63,6 +56,7 @@ class FrameByFrame(nn.Module):
         self.output_size = output_size
         self.AFeatRNN = nn.LSTM(self.Ainput_size, self.output_size,
                                 self.layers_num)
+        self.dropout = nn.Dropout(p = dropout_ratio)
         self.Amatching = Match(self.output_size, self.output_size,
                                self.output_size)
         self.Vmatching = Match(self.Vinput_size, self.output_size,
@@ -82,6 +76,7 @@ class FrameByFrame(nn.Module):
             c_0 = c_0.cuda()
         
         outAfeat, _ = self.AFeatRNN((Afeat / 255.0).permute(2, 0, 1), (h_0, c_0)) #! [10, 1, 64] [frames, batch, length]
+        outAfeat = self.dropout(outAfeat)
 
         prob = 0 #! outAfeat [10, 1, 64]  Vfeat [1, 512, 10]
 

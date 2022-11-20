@@ -174,7 +174,7 @@ if __name__ == '__main__':
     # create model
     if hasattr(models.match_net, opt.model):
         model_class = getattr(models.match_net, opt.model)
-        model = model_class()
+        model = model_class(dropout_ratio = opt.dropout_ratio)
     else:
         raise ModuleNotFoundError(f"No implementation of {opt.model}")
 
@@ -194,7 +194,7 @@ if __name__ == '__main__':
     # logger settings
     afeat_name = os.path.split(opt.apath)[1]
     vfeat_name = os.path.split(opt.vpath)[1]
-    wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs)
+    wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs) + 'dropout_ratio' + str(opt.dropout_ratio)
     wandb.init(project = 'train', name = wandb_string, reinit = True, entity = "ther")
 
     logger.setLevel(level = logging.INFO)
@@ -218,5 +218,7 @@ if __name__ == '__main__':
         train(train_loader, model, criterion, optimizer, epoch, opt)
         scheduler.step()
         if ((epoch + 1) % opt.epoch_save) == 0:
-            path_checkpoint = f'{opt.checkpoint_folder}/{wandb_string}_state_epoch{epoch + 1}.pth'
+            if not os.path.exists(f'{opt.checkpoint_folder}/{wandb_string}'):
+                os.system(f'mkdir -p {opt.checkpoint_folder}/{wandb_string}')
+            path_checkpoint = f'{opt.checkpoint_folder}/{wandb_string}/state_epoch{epoch + 1}.pth'
             utils.save_checkpoint(model.state_dict(), path_checkpoint)
