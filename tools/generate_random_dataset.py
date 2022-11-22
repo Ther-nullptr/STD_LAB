@@ -27,7 +27,7 @@ if __name__ == '__main__':
     video_original_dir = '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Train/video'
 
     label = list(np.arange(3339))
-    label_dev = random.sample(label, 334)
+    label_dev = label[0::10] # 10%
     label_train = list(set(label) - set(label_dev))
 
     afeat_train_dir = '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Train_Part/afeat'
@@ -44,6 +44,6 @@ if __name__ == '__main__':
 
     soft_connect(afeat_original_dir, afeat_train_dir, 'vggish-quant', label_train, padding = 4)
     soft_connect(afeat_original_dir, afeat_dev_dir, 'vggish-quant', label_dev, padding = 4)
-    soft_connect(vfeat_original_dir, vfeat_train_dir, 'resnet-101', label_train, padding = 4)
-    soft_connect(vfeat_original_dir, vfeat_dev_dir, 'resnet-101', label_dev, padding = 4)
+    # soft_connect(vfeat_original_dir, vfeat_train_dir, 'BeiTExtractor', label_train, padding = 4)
+    # soft_connect(vfeat_original_dir, vfeat_dev_dir, 'BeiTExtractor', label_dev, padding = 4)
 

@@ -2,9 +2,10 @@
 model: VggishExtractor
 pretrained: False # whether to load pretrained model
 local_model: False # whether to load the local model params
+local_path: /root/kyzhang/download/data2vec-audio-base-960h
 
 # dir
 dirname: 'feat/audiofeat'
 
 # device
-cuda: False # whether to use GPU
+cuda: True # whether to use GPU

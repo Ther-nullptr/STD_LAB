@@ -174,7 +174,7 @@ if __name__ == '__main__':
     # create model
     if hasattr(models.match_net, opt.model):
         model_class = getattr(models.match_net, opt.model)
-        model = model_class(dropout_ratio = opt.dropout_ratio)
+        model = model_class(Vinput_size = opt.v_input_size, Ainput_size = opt.a_input_size, dropout_ratio = opt.dropout_ratio)
     else:
         raise ModuleNotFoundError(f"No implementation of {opt.model}")
 

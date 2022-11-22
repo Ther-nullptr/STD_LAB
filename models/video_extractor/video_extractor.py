@@ -2,6 +2,7 @@ import os
 import cv2
 import torch
 import numpy as np
+from tqdm import tqdm
 from abc import abstractmethod
 
 class VideoExtractor(torch.nn.Module):
@@ -14,16 +15,16 @@ class VideoExtractor(torch.nn.Module):
     def forward(self, x):
         pass
 
-    def extract_dir(self, dirname):
-        os.system(f'mkdir {dirname}/{self.name}')
+    def extract_dir(self, dirname, cuda):
+        os.system(f'mkdir {dirname}/vfeat/{self.name}')
         vnames = os.listdir(os.path.join(dirname, 'video'))
-        for vname in vnames:
+        for vname in tqdm(vnames):
             sname = vname[:-4] + '.npy'
             fullname = os.path.join(dirname, 'video', vname)
-            feat = self.extract_video(fullname, self.model)
-            np.save(os.path.join(dirname, self.name, sname), feat)
+            feat = self.extract_video(fullname, cuda)
+            np.save(os.path.join(dirname, 'vfeat', self.name, sname), feat)
 
-    def extract_video(self, fullname):
+    def extract_video(self, fullname, cuda):
         cap = cv2.VideoCapture(fullname)
         cnt = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) #! cnt means total frames
 
@@ -56,8 +57,11 @@ class VideoExtractor(torch.nn.Module):
             cnt += 1
 
         cap.release()
-        x = torch.from_numpy(x / 255.0).float().permute(0, 3, 1, 2) #! [10, 3, 224, 224]
+        if cuda:
+            x = torch.from_numpy(x / 255.0).float().permute(0, 3, 1, 2).cuda() #! [10, 3, 224, 224]
+        else:
+            x = torch.from_numpy(x / 255.0).float().permute(0, 3, 1, 2)
         with torch.no_grad():
-            feat = self.model(x).cpu().numpy()
+            feat = self.forward(x).cpu().numpy()
 
         return feat

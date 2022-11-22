@@ -53,7 +53,7 @@ if __name__ == '__main__':
     opt = Config(opts.config)
     print(opt)
 
-    model = models.FrameByFrame()
+    model = models.FrameByFrame(Vinput_size = opt.v_input_size, Ainput_size = opt.a_input_size)
     ckpt = torch.load(f'checkpoints/{opt.ckpt_name}.pth',
                       map_location='cpu')
     model.load_state_dict(ckpt)
@@ -71,8 +71,8 @@ if __name__ == '__main__':
 
     data_num = len(os.listdir(opt.vpath))
     rst = np.zeros((data_num, data_num))
-    vfeats = torch.zeros(data_num, 512, 10).float()
-    afeats = torch.zeros(data_num, 128, 10).float()
+    vfeats = torch.zeros(data_num, opt.v_input_size, 10).float()
+    afeats = torch.zeros(data_num, opt.a_input_size, 10).float()
 
     for i in tqdm(range(data_num)):
         vfeat = np.load(os.path.join(vpath, '%04d.npy' % i))

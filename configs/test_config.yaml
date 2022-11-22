@@ -6,8 +6,12 @@ cuda: True
 
 # data path
 type: data
-vpath: 'data/Dataset/Dev/vfeat/resnet-101'
+vpath: 'data/Dataset/Dev/vfeat/BeiTExtractor'
 apath: 'data/Dataset/Dev/afeat/vggish-quant'
 
+# input size
+v_input_size: 768
+a_input_size: 128
+
 # name
-ckpt_name: modelFrameByFramebatchSize64lr0.001vpathresnet-101apathvggish-quantmax_epochs100dropout_ratio0.0comment0.1pos/state_epoch100
+ckpt_name: modelFrameByFramebatchSize64lr0.001vpathBeiTExtractorapathvggish-quantmax_epochs100dropout_ratio0.0comment/state_epoch100

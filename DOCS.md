@@ -266,3 +266,166 @@ video model:
 STD大作业毕竟是要刷点的，所以不得不使用大的预训练模型（本来想试一试轻量级模型的），条件允许的话，将考虑使用这些模型的large model ckpt。
 
 考虑模型融合+特征工程
+
+## 11.20
+
+```
+BeitForImageClassification(
+  (beit): BeitModel(
+    (embeddings): BeitEmbeddings(
+      (patch_embeddings): PatchEmbeddings(
+        (projection): Conv2d(3, 768, kernel_size=(16, 16), stride=(16, 16))
+      )
+      (dropout): Dropout(p=0.0, inplace=False)
+    )
+    (encoder): BeitEncoder(
+      (layer): ModuleList(
+        (0): BeitLayer(
+          (attention): BeitAttention(
+            (attention): BeitSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=False)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.0, inplace=False)
+              (relative_position_bias): BeitRelativePositionBias()
+            )
+            (output): BeitSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.0, inplace=False)
+            )
+          )
+          (intermediate): BeitIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BeitOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (dropout): Dropout(p=0.0, inplace=False)
+          )
+          (layernorm_before): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (drop_path): Identity()
+          (layernorm_after): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        ...
+      )
+    )
+    (layernorm): Identity()
+    (pooler): BeitPooler(
+      (layernorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+    )
+  )
+  (classifier): Linear(in_features=768, out_features=21841, bias=True)
+)
+```
+
+```
+Data2VecAudioForCTC(
+  (data2vec_audio): Data2VecAudioModel(
+    (feature_extractor): Data2VecAudioFeatureEncoder(
+      (conv_layers): ModuleList(
+        (0): Data2VecAudioConvLayer(
+          (conv): Conv1d(1, 512, kernel_size=(10,), stride=(5,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (1): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (2): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (3): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (4): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (5): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(2,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+        (6): Data2VecAudioConvLayer(
+          (conv): Conv1d(512, 512, kernel_size=(2,), stride=(2,), bias=False)
+          (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+          (activation): GELUActivation()
+        )
+      )
+    )
+    (feature_projection): Data2VecAudioFeatureProjection(
+      (layer_norm): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+      (projection): Linear(in_features=512, out_features=768, bias=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+    )
+    (encoder): Data2VecAudioEncoder(
+      (pos_conv_embed): Data2VecAudioPositionalConvEmbedding(
+        (layers): ModuleList(
+          (0): Data2VecAudioPositionalConvLayer(
+            (conv): Conv1d(768, 768, kernel_size=(19,), stride=(1,), padding=(9,), groups=16)
+            (padding): Data2VecAudioPadLayer()
+            (activation): GELUActivation()
+            (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=False)
+          )
+          (1): Data2VecAudioPositionalConvLayer(
+            (conv): Conv1d(768, 768, kernel_size=(19,), stride=(1,), padding=(9,), groups=16)
+            (padding): Data2VecAudioPadLayer()
+            (activation): GELUActivation()
+            (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=False)
+          )
+          (2): Data2VecAudioPositionalConvLayer(
+            (conv): Conv1d(768, 768, kernel_size=(19,), stride=(1,), padding=(9,), groups=16)
+            (padding): Data2VecAudioPadLayer()
+            (activation): GELUActivation()
+            (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=False)
+          )
+          (3): Data2VecAudioPositionalConvLayer(
+            (conv): Conv1d(768, 768, kernel_size=(19,), stride=(1,), padding=(9,), groups=16)
+            (padding): Data2VecAudioPadLayer()
+            (activation): GELUActivation()
+            (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=False)
+          )
+          (4): Data2VecAudioPositionalConvLayer(
+            (conv): Conv1d(768, 768, kernel_size=(19,), stride=(1,), padding=(9,), groups=16)
+            (padding): Data2VecAudioPadLayer()
+            (activation): GELUActivation()
+            (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=False)
+          )
+        )
+      )
+      (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+      (layers): ModuleList(
+        (0): Data2VecAudioEncoderLayer(
+          (attention): Data2VecAudioAttention(
+            (k_proj): Linear(in_features=768, out_features=768, bias=True)
+            (v_proj): Linear(in_features=768, out_features=768, bias=True)
+            (q_proj): Linear(in_features=768, out_features=768, bias=True)
+            (out_proj): Linear(in_features=768, out_features=768, bias=True)
+          )
+          (dropout): Dropout(p=0.1, inplace=False)
+          (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (feed_forward): Data2VecAudioFeedForward(
+            (intermediate_dropout): Dropout(p=0.1, inplace=False)
+            (intermediate_dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+            (output_dense): Linear(in_features=3072, out_features=768, bias=True)
+            (output_dropout): Dropout(p=0.1, inplace=False)
+          )
+          (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        )
+        ...
+      )
+    )
+  )
+  (dropout): Dropout(p=0.1, inplace=False)
+  (lm_head): Linear(in_features=768, out_features=32, bias=True)
+)
+```
