@@ -7,15 +7,15 @@ if __name__ == '__main__':
     parser.add_option('--config',
                       type=str,
                       help="audio extract configuration",
-                      default="../configs/audio_extractor.yaml")
+                      default="./configs/audio_extractor.yaml")
 
     (opts, args) = parser.parse_args()
     assert isinstance(opts, object)
     opt = Config(opts.config)
     print(opt)
 
-    if hasattr(models.audio_extractor, opt.model):
-        model_class = getattr(models.audio_extractor, opt.model)
+    if hasattr(models, opt.model):
+        model_class = getattr(models, opt.model)
         model = model_class(opt)
     else:
         raise ModuleNotFoundError(f"No implementation of {opt.model}")

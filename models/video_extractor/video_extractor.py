@@ -22,7 +22,7 @@ class VideoExtractor(torch.nn.Module):
             sname = vname[:-4] + '.npy'
             fullname = os.path.join(dirname, 'video', vname)
             feat = self.extract_video(fullname, cuda)
-            np.save(os.path.join(dirname, 'vfeat', self.name, sname), feat)
+            np.save(os.path.join(dirname, 'vfeat', self.name, sname), feat).detach().cpu()
 
     def extract_video(self, fullname, cuda):
         cap = cv2.VideoCapture(fullname)

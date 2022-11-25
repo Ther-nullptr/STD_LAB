@@ -1,7 +1,7 @@
 # model
 model: BeiTExtractor
-pretrained: False # whether to load pretrained model
-local_model: False # whether to load the local model params
+pretrained: True # whether to load pretrained model
+local_model: True # whether to load the local model params
 local_path: /root/kyzhang/download/beit-base-patch16-224-pt22k-ft22k
 
 # dir

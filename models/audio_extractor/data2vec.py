@@ -17,4 +17,8 @@ class Data2vecExtractor(AudioExtractor):
 
     def forward(self, x: torch.Tensor):
         output = self.model.data2vec_audio.forward(x)
-        return output.pooler_output
+        last_hidden_state = output.last_hidden_state
+        last_hidden_state = last_hidden_state.mean(dim = 0)
+        length = last_hidden_state.shape[0]
+        extract = last_hidden_state[0::length//10,:][0:10]
+        return extract

@@ -44,6 +44,6 @@ if __name__ == '__main__':
 
     soft_connect(afeat_original_dir, afeat_train_dir, 'vggish-quant', label_train, padding = 4)
     soft_connect(afeat_original_dir, afeat_dev_dir, 'vggish-quant', label_dev, padding = 4)
-    # soft_connect(vfeat_original_dir, vfeat_train_dir, 'BeiTExtractor', label_train, padding = 4)
-    # soft_connect(vfeat_original_dir, vfeat_dev_dir, 'BeiTExtractor', label_dev, padding = 4)
+    soft_connect(vfeat_original_dir, vfeat_train_dir, 'BeiTExtractor', label_train, padding = 4)
+    soft_connect(vfeat_original_dir, vfeat_dev_dir, 'BeiTExtractor', label_dev, padding = 4)
 

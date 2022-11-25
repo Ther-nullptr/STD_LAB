@@ -178,6 +178,10 @@ if __name__ == '__main__':
     else:
         raise ModuleNotFoundError(f"No implementation of {opt.model}")
 
+    if opt.use_ckpt:
+        state_dict = torch.load(opt.ckpt_path)
+        model.load_state_dict(state_dict)
+
     criterion = torch.nn.CrossEntropyLoss()
     if opt.cuda:
         print('shift model and criterion to GPU .. ')
