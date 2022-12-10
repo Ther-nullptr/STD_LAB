@@ -23,7 +23,7 @@ Train
 └── video
 ```
 
-Then use `tools/generate_random_dataset.py` to split the `Train` dataset into `Train`(90%) and `Dev`(10%). Notice you should modify your absolute path in this script.
+Then use `tools/generate_random_dataset.py` to split the `Train` dataset into `Train_Part`(90%) and `Dev`(10%). Notice you should modify your absolute path in this script.
 
 After split, the directory tree should like this:
 
