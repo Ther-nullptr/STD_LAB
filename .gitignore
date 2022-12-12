@@ -8,5 +8,6 @@ data/
 wandb/
 result/
 *.txt
-/.vscode
+.vscode
+/*.ipynb
 !data/README.md

@@ -1,0 +1,6 @@
+soundfile
+sklearn
+numpy
+torch
+transformers
+opencv-python
