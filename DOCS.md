@@ -6,7 +6,7 @@
 
 ### API: numpy和torch的两种乘法
 
-众所周知，矩阵有两种乘法，一种是正常的矩阵相乘，另一种是逐个元素相乘（hadama积）。默认情况下，numpy.array的乘法是hadama积。若想进行矩阵相乘，需要使用`np.matmul`方法或`@`语法糖。但注意numpy.matrix的`*`运算是矩阵乘积：
+众所周知，矩阵有两种乘法，一种是正常的矩阵相乘，另一种是逐个元素相乘（hadama积）。默认情况下，numpy.array的乘法是hadama积。若想进行矩阵相乘，需要使用 `np.matmul`方法或 `@`语法糖。但注意numpy.matrix的 `*`运算是矩阵乘积：
 
 ```python
 >>> import numpy as np
@@ -227,6 +227,7 @@ ResNet(
 audio: int16   video: float32
 
 网络架构：
+
 ```log
 FrameByFrame(
   (AFeatRNN): LSTM(128, 64, num_layers=3)
@@ -245,23 +246,25 @@ FrameByFrame(
 )
 ```
 
-## 11.17 
+## 11.17
 
 Python代码规范：https://zhuanlan.zhihu.com/p/383418209
 
 ## 11.18
 
 audio model:
+
 * vggish: baseline
 * LSTM: small & efficient
 * HuBERT
 * data2vec: sota of ASR tasks
 
 video model:
+
 * resnet101: baseline
 * swin-transformer: a high efficient vision transformer
 * DeiT
-* A-ViT 
+* A-ViT
 
 STD大作业毕竟是要刷点的，所以不得不使用大的预训练模型（本来想试一试轻量级模型的），条件允许的话，将考虑使用这些模型的large model ckpt。
 
@@ -429,3 +432,13 @@ Data2VecAudioForCTC(
   (lm_head): Linear(in_features=768, out_features=32, bias=True)
 )
 ```
+
+
+## 12.11
+
+关于分类任务嵌入的一些想法。
+
+音视频对应不同的子类，如果在训练的过程中加入子类的信息应该会带来积极作用。值得思考的是，以何种方式加入子类信息？
+
+1. 在特征中加入子类信息，辅助训练，可以调节附加特征的权重（根据训练效果）
+2. 修改标签，当前的标签只有 0 和 1，也即对和错，也许可以在训练的时候加入子类标签，给训练加入分类导向，可以尝试修改 loss 函数中分类任务和匹配任务的权重看看能不能有不错的效果。
