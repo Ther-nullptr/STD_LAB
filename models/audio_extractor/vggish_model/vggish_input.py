@@ -17,7 +17,7 @@
 
 # Modification: Return torch tensors rather than numpy arrays
 import torch
-
+import resampy
 import numpy as np
 
 from . import mel_features
@@ -25,7 +25,7 @@ from . import vggish_params
 
 
 
-def waveform_to_examples(data, sample_rate, return_tensor=True):
+def waveform_to_examples(data:torch.Tensor, sample_rate, return_tensor=True):
     """Converts audio waveform into an array of examples for VGGish.
 
   Args:
@@ -44,10 +44,12 @@ def waveform_to_examples(data, sample_rate, return_tensor=True):
 
   """
     # Convert to mono.
+    data = data.transpose(1, 0)
     if len(data.shape) > 1:
-        data = np.mean(data, axis=1)
+        data = torch.mean(data, axis=1)
     # Resample to the rate assumed by VGGish.
     if sample_rate != vggish_params.SAMPLE_RATE:
+        data = data.cpu().numpy()
         data = resampy.resample(data, sample_rate, vggish_params.SAMPLE_RATE)
 
     # Compute log mel spectrogram features.
