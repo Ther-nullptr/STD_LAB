@@ -1,6 +1,6 @@
 # model
 model: FrameByFrame
-dropout_ratio: 0.3
+dropout_ratio: 0.0
 use_ckpt: False
 ckpt_path: /root/kyzhang/yjwang/InclusiveFL2/checkpoints/modelFrameByFramebatchSize64lr0.001vpathBeiTExtractorapathData2vecExtractormax_epochs100dropout_ratio0.0comment/state_epoch100.pth
 prev_epoch: 100
@@ -12,7 +12,7 @@ gpu_id: '0'
 
 # dataloader
 workers: 0
-batchSize: 64
+batchSize: 32
 
 # learning rate
 lr: 0.001
@@ -21,10 +21,10 @@ lr_decay_epoch: 30
 
 # data path
 vpath: 'data/Dataset/Train_Part/vfeat/BeiTExtractor'
-apath: 'data/Dataset/Train_Part/afeat/Data2vecExtractor'
+apath: 'data/Dataset/Train_Part/afeat/VggishExtractor_noise'
 
 # epochs
-max_epochs: 200
+max_epochs: 100
 epoch_save: 10
 
 # save
@@ -35,7 +35,7 @@ prefix: 'VA_METRIC'
 
 # input size
 v_input_size: 768
-a_input_size: 768
+a_input_size: 128
 
 # comment
 comment: ''

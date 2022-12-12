@@ -9,3 +9,11 @@ dirname: data/Dataset/Train
 
 # device
 cuda: True # whether to use GPU
+
+# noise
+use_noise: True
+mean: 1.8055
+std: 7.62
+
+# denoise
+use_denoise: True
