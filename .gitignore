@@ -9,3 +9,7 @@ wandb/
 result/
 *.txt
 !data/README.md
+
+*.png
+*.wav
+*.mp4
