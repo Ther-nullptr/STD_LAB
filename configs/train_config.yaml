@@ -1,6 +1,8 @@
 # model
 model: FrameByFrame
-dropout_ratio: 0.0
+
+dropout_ratio: 0
+
 use_ckpt: False
 ckpt_path: /root/kyzhang/yjwang/InclusiveFL2/checkpoints/modelFrameByFramebatchSize64lr0.001vpathBeiTExtractorapathData2vecExtractormax_epochs100dropout_ratio0.0comment/state_epoch100.pth
 prev_epoch: 100
@@ -20,8 +22,9 @@ lr_decay: 0.9
 lr_decay_epoch: 30
 
 # data path
-vpath: 'data/Dataset/Train_Part/vfeat/BeiTExtractor'
-apath: 'data/Dataset/Train_Part/afeat/VggishExtractor_noise'
+vpath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/vfeat/BeiTExtractor'
+apath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/afeat/vggish-quant'
+
 
 # epochs
 max_epochs: 100
@@ -38,4 +41,8 @@ v_input_size: 768
 a_input_size: 128
 
 # comment
-comment: ''
+comment: 'bias50'
+
+# classify
+add_classify: True
+cpath: './train_class.npy'

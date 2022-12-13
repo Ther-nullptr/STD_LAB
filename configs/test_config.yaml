@@ -6,12 +6,15 @@ cuda: True
 
 # data path
 type: data
+
 vpath: 'data/Dataset/Dev/vfeat/BeiTExtractor'
 apath: 'data/Dataset/Dev/afeat/VggishExtractor_noise'
+
 
 # input size
 v_input_size: 768
 a_input_size: 128
 
 # name
+
 ckpt_name: modelFrameByFramebatchSize32lr0.001vpathBeiTExtractorapathVggishExtractor_noisemax_epochs100dropout_ratio0.0comment/state_epoch100

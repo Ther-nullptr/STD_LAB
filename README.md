@@ -25,9 +25,13 @@ Train
 
 Then use `tools/generate_random_dataset.py` to split the `Train` dataset into `Train_Part`(90%) and `Dev`(10%). Notice you should modify your absolute path in this script.
 
+Also, for recording the result with `wandb`, you should create one  `log` folder, like below.
+
+
 After split, the directory tree should like this:
 
 ```
+log
 data
 └── Dataset
     ├── Dev
