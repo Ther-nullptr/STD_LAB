@@ -1,11 +1,12 @@
-from optparse import OptionParser
-from tqdm import tqdm
-import models
-import torch
-import wandb
-import numpy as np
 import os
+from optparse import OptionParser
 
+import numpy as np
+import torch
+from tqdm import tqdm
+
+import models
+import wandb
 from tools.config_tools import Config
 
 
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     assert opt.type in opt.vpath, 'mismatch in video'
     assert opt.type in opt.apath, 'mismatch in audio'
 
-    wandb.init(project = 'test', name = opt.ckpt_name, reinit = True, entity = "ther")
+    wandb.init(project = 'test', name = opt.ckpt_name, reinit = True, entity = "zachary-liu20")
 
     data_num = len(os.listdir(opt.vpath))
     rst = np.zeros((data_num, data_num))

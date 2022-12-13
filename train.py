@@ -3,15 +3,14 @@
 from __future__ import print_function
 
 import logging
-import random
-import wandb
-import time
-import sys
 import os
-import numpy as np
-from optparse import OptionParser
+import random
+import sys
+import time
 from datetime import datetime
+from optparse import OptionParser
 
+import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 import torch.optim as optim
@@ -19,9 +18,10 @@ from torch.autograd import Variable
 from torch.optim.lr_scheduler import LambdaLR as LR_Policy
 
 import models.match_net
+import wandb
 from dataset import VideoFeatDataset as dset
-from tools.config_tools import Config
 from tools import utils
+from tools.config_tools import Config
 
 logger = logging.getLogger(__name__)
 
@@ -141,7 +141,10 @@ if __name__ == '__main__':
     if not os.path.exists(opt.checkpoint_folder):
         os.system('mkdir {0}'.format(opt.checkpoint_folder))
 
-    train_dataset = dset(opt.vpath, opt.apath)
+    # classify
+    if opt.add_classify is False:
+        opt.cpath = None
+    train_dataset = dset(opt.vpath, opt.apath, opt.cpath)
 
     print('number of train samples is: {0}'.format(len(train_dataset)))
     print('finished loading data')
@@ -199,7 +202,7 @@ if __name__ == '__main__':
     afeat_name = os.path.split(opt.apath)[1]
     vfeat_name = os.path.split(opt.vpath)[1]
     wandb_string = 'model' + str(opt.model) + 'batchSize' + str(opt.batchSize) + 'lr' + str(opt.lr) + 'vpath' + str(vfeat_name) + 'apath' + str(afeat_name) + 'max_epochs' + str(opt.max_epochs) + 'dropout_ratio' + str(opt.dropout_ratio) + 'comment' + str(opt.comment)
-    wandb.init(project = 'train', name = wandb_string, reinit = True, entity = "ther")
+    wandb.init(project = 'train', name = wandb_string, reinit = True, entity = "zachary-liu20")
 
     logger.setLevel(level = logging.INFO)
     formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(filename)s : %(lineno)s line - %(message)s")

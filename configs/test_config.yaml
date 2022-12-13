@@ -6,12 +6,12 @@ cuda: True
 
 # data path
 type: data
-vpath: 'data/Dataset/Dev/vfeat/BeiTExtractor'
-apath: 'data/Dataset/Dev/afeat/Data2vecExtractor'
+vpath: '/home/liugh/STD_LAB/data/Dataset/Dev/vfeat/BeiTExtractor'
+apath: '/home/liugh/STD_LAB/data/Dataset/Dev/afeat/vggish-quant'
 
 # input size
 v_input_size: 768
-a_input_size: 768
+a_input_size: 128
 
 # name
-ckpt_name: modelFrameByFramebatchSize64lr0.001vpathBeiTExtractorapathData2vecExtractormax_epochs200dropout_ratio0.3comment/state_epoch200
+ckpt_name: modelFrameByFramebatchSize32lr0.001vpathBeiTExtractorapathvggish-quantmax_epochs100dropout_ratio0commentbias50/state_epoch100
