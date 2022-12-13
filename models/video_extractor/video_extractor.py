@@ -10,19 +10,26 @@ class VideoExtractor(torch.nn.Module):
         super(VideoExtractor, self).__init__()
         self.model = torch.nn.Module()
         self.name = cfg.model
+        self.use_noise = cfg.use_noise
 
     @abstractmethod
     def forward(self, x):
         pass
 
     def extract_dir(self, dirname, cuda):
-        os.system(f'mkdir {dirname}/vfeat/{self.name}')
+        if self.use_noise:
+            os.system(f'mkdir {dirname}/vfeat/{self.name}_noise')
+        else:
+            os.system(f'mkdir {dirname}/vfeat/{self.name}')
         vnames = os.listdir(os.path.join(dirname, 'video'))
         for vname in tqdm(vnames):
             sname = vname[:-4] + '.npy'
             fullname = os.path.join(dirname, 'video', vname)
             feat = self.extract_video(fullname, cuda)
-            np.save(os.path.join(dirname, 'vfeat', self.name, sname), feat).detach().cpu()
+            if self.use_noise:
+                np.save(os.path.join(dirname, 'vfeat', f'{self.name}_noise', sname), feat)
+            else:
+                np.save(os.path.join(dirname, 'vfeat', self.name, sname), feat.detach().cpu())
 
     def extract_video(self, fullname, cuda):
         cap = cv2.VideoCapture(fullname)

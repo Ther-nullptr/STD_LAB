@@ -1,6 +1,8 @@
 # model
 model: FrameByFrame
+
 dropout_ratio: 0
+
 use_ckpt: False
 ckpt_path: /root/kyzhang/yjwang/InclusiveFL2/checkpoints/modelFrameByFramebatchSize64lr0.001vpathBeiTExtractorapathData2vecExtractormax_epochs100dropout_ratio0.0comment/state_epoch100.pth
 prev_epoch: 100
@@ -22,6 +24,7 @@ lr_decay_epoch: 30
 # data path
 vpath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/vfeat/BeiTExtractor'
 apath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/afeat/vggish-quant'
+
 
 # epochs
 max_epochs: 100

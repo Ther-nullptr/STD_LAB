@@ -1,11 +1,16 @@
 # model
-model: Data2vecExtractor
-pretrained: True # whether to load pretrained model
-local_model: True # whether to load the local model params
-local_path: /root/kyzhang/download/data2vec-audio-base-960h
+model: VggishExtractor
+#pretrained: True # whether to load pretrained model
+#local_model: True # whether to load the local model params
+#local_path: /root/kyzhang/download/data2vec-audio-base-960h
 
 # dir
 dirname: data/Dataset/Train
 
 # device
 cuda: True # whether to use GPU
+
+# noise
+use_noise: True
+mean: -0.0015
+std: 0.0498

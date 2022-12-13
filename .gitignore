@@ -10,4 +10,7 @@ result/
 *.txt
 .vscode
 /*.ipynb
-!data/README.md
+
+*.png
+*.wav
+*.mp4

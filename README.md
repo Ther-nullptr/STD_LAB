@@ -27,6 +27,7 @@ Then use `tools/generate_random_dataset.py` to split the `Train` dataset into `T
 
 Also, for recording the result with `wandb`, you should create one  `log` folder, like below.
 
+
 After split, the directory tree should like this:
 
 ```

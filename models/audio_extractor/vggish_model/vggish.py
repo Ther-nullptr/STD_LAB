@@ -32,6 +32,7 @@ class VGG(nn.Module):
         return nn.Sequential(*layers)
 
     def forward(self, x):
+        x = x.cuda()
         x = self.features(x) #! [12, 512, 6, 4] 512: channels, h, w (feature map)
         # Transpose the output from features to
         # remain compatible with vggish embeddings
@@ -137,17 +138,20 @@ def _vgg():
 #     )
 #     return Spectrogram.MelSpectrogram(**config)
 
+urls = {
+    'vggish': 'https://github.com/harritaylor/torchvggish/'
+              'releases/download/v0.1/vggish-10086976.pth',
+    'pca': 'https://github.com/harritaylor/torchvggish/'
+           'releases/download/v0.1/vggish_pca_params-970ea276.pth'
+}
 
 class VGGish(VGG):
     def __init__(self, ckpt = None, device='cpu', pretrained=True, preprocess=True, postprocess=True):
         super().__init__()
-        if ckpt == None:
-            pretrained = False
-        if pretrained:
-            # state_dict = hub.load_state_dict_from_url(urls['vggish'], progress=progress)
-            state_dict = torch.load(ckpt['vggish'])
-            super().load_state_dict(state_dict)
-            print('The checkpoint for vggish is loaded!')
+        state_dict = hub.load_state_dict_from_url(urls['vggish'])
+        # state_dict = torch.load(ckpt['vggish'])
+        super().load_state_dict(state_dict)
+        print('The checkpoint for vggish is loaded!')
 
         if device is None:
             device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -156,18 +160,17 @@ class VGGish(VGG):
         self.postprocess = postprocess
         if self.postprocess:
             self.pproc = Postprocessor()
-            if pretrained:
-                # state_dict = hub.load_state_dict_from_url(urls['pca'], progress=progress)
-                state_dict = torch.load(ckpt['pca'])
-                # TODO: Convert the state_dict to torch
-                state_dict[vggish_params.PCA_EIGEN_VECTORS_NAME] = torch.as_tensor(
-                    state_dict[vggish_params.PCA_EIGEN_VECTORS_NAME], dtype=torch.float
-                )
-                state_dict[vggish_params.PCA_MEANS_NAME] = torch.as_tensor(
-                    state_dict[vggish_params.PCA_MEANS_NAME].reshape(-1, 1), dtype=torch.float
-                )
-                self.pproc.load_state_dict(state_dict)
-                print('The checkpoint for pca is loaded!')
+            state_dict = hub.load_state_dict_from_url(urls['pca'])
+            # state_dict = torch.load(ckpt['pca'])
+            # TODO: Convert the state_dict to torch
+            state_dict[vggish_params.PCA_EIGEN_VECTORS_NAME] = torch.as_tensor(
+                state_dict[vggish_params.PCA_EIGEN_VECTORS_NAME], dtype=torch.float
+            )
+            state_dict[vggish_params.PCA_MEANS_NAME] = torch.as_tensor(
+                state_dict[vggish_params.PCA_MEANS_NAME].reshape(-1, 1), dtype=torch.float
+            )
+            self.pproc.load_state_dict(state_dict)
+            print('The checkpoint for pca is loaded!')
         self.to(self.device)
 
     def forward(self, x, fs = None):
@@ -180,12 +183,7 @@ class VGGish(VGG):
         return x
 
     def _preprocess(self, x, fs):
-        if isinstance(x, np.ndarray):
-            x = vggish_input.waveform_to_examples(x, fs)
-        elif isinstance(x, str):
-            x = vggish_input.wavfile_to_examples(x)
-        else:
-            raise AttributeError
+        x = vggish_input.waveform_to_examples(x, fs)
         return x
 
     def _postprocess(self, x):
