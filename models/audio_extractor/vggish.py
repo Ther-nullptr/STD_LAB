@@ -18,7 +18,7 @@ class VggishExtractor(AudioExtractor):
         self.mean = cfg.mean
         self.std = cfg.std
 
-    def forward(self, x, fs):
+    def forward(self, x, fs = None):
         if self.use_noise:
             x = x + torch.Tensor(normal(loc = self.mean , scale = self.std, size = x.shape)).cuda()
         return self.model.forward(x, fs)

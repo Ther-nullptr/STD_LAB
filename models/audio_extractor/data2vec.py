@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+from numpy.random import normal
 from transformers import Wav2Vec2Processor, Data2VecAudioForCTC
 
 from .audio_extractor import AudioExtractor
@@ -14,8 +15,13 @@ class Data2vecExtractor(AudioExtractor):
             self.model.cuda()
 
         self.model.eval()
+        self.use_noise = cfg.use_noise
+        self.mean = cfg.mean
+        self.std = cfg.std
 
-    def forward(self, x: torch.Tensor):
+    def forward(self, x: torch.Tensor, *args):
+        if self.use_noise:
+            x = x + torch.Tensor(normal(loc = self.mean , scale = self.std, size = x.shape)).cuda()
         output = self.model.data2vec_audio.forward(x)
         last_hidden_state = output.last_hidden_state
         last_hidden_state = last_hidden_state.mean(dim = 0)
