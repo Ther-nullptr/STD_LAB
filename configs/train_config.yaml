@@ -1,5 +1,5 @@
 # model
-model: FrameByFrame
+model: ClassificationNet
 
 dropout_ratio: 0
 
@@ -22,9 +22,12 @@ lr_decay: 0.9
 lr_decay_epoch: 30
 
 # data path
-vpath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/vfeat/BeiTExtractor'
-apath: '/home/liugh/STD_LAB/data/Dataset/Train_Part/afeat/vggish-quant'
+vpath: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Train_Part/vfeat/BeiTExtractor_noise'
+apath: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Train_Part/afeat/Data2vecExtractor_noise'
 
+# valid path
+vpath_valid: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Dev/vfeat/BeiTExtractor'
+apath_valid: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Dev/afeat/vggish-quant'
 
 # epochs
 max_epochs: 100
@@ -38,11 +41,13 @@ prefix: 'VA_METRIC'
 
 # input size
 v_input_size: 768
-a_input_size: 128
-
+a_input_size: 768
 # comment
 comment: 'bias50'
 
 # classify
 add_classify: True
-cpath: './train_class.npy'
+cpath: './train_part_class.npy'
+
+# supervised
+supervised: True

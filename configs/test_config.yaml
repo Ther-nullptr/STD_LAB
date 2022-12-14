@@ -1,5 +1,5 @@
 # model
-model: FrameByFrame
+model: ClassificationNet
 
 # device
 cuda: True
@@ -7,14 +7,14 @@ cuda: True
 # data path
 type: data
 
-vpath: 'data/Dataset/Dev/vfeat/BeiTExtractor'
-apath: 'data/Dataset/Dev/afeat/VggishExtractor_noise'
+vpath: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Dev/vfeat/BeiTExtractor_noise'
+apath: '/root/kyzhang/yjwang/InclusiveFL2/data/Dataset/Dev/afeat/Data2vecExtractor_noise'
 
 
 # input size
 v_input_size: 768
-a_input_size: 128
+a_input_size: 768
 
 # name
 
-ckpt_name: modelFrameByFramebatchSize32lr0.001vpathBeiTExtractorapathVggishExtractor_noisemax_epochs100dropout_ratio0.0comment/state_epoch100
+ckpt_name: modelClassificationNetbatchSize32lr0.001vpathBeiTExtractor_noiseapathData2vecExtractormax_epochs100dropout_ratio0commentbias50/state_epoch100

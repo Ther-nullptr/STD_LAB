@@ -54,7 +54,7 @@ if __name__ == '__main__':
     opt = Config(opts.config)
     print(opt)
 
-    model = models.FrameByFrame(Vinput_size = opt.v_input_size, Ainput_size = opt.a_input_size)
+    model = models.ClassificationNet(Vinput_size = opt.v_input_size, Ainput_size = opt.a_input_size)
     ckpt = torch.load(f'checkpoints/{opt.ckpt_name}.pth',
                       map_location='cpu')
     model.load_state_dict(ckpt)
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     assert opt.type in opt.vpath, 'mismatch in video'
     assert opt.type in opt.apath, 'mismatch in audio'
 
-    wandb.init(project = 'test', name = opt.ckpt_name, reinit = True, entity = "zachary-liu20")
+    wandb.init(project = 'test', name = opt.ckpt_name, reinit = True, entity = "ther")
 
     data_num = len(os.listdir(opt.vpath))
     rst = np.zeros((data_num, data_num))

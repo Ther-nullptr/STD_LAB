@@ -1,8 +1,8 @@
 # model
-model: VggishExtractor
+model: Data2vecExtractor
 #pretrained: True # whether to load pretrained model
 #local_model: True # whether to load the local model params
-#local_path: /root/kyzhang/download/data2vec-audio-base-960h
+local_path: /root/kyzhang/download/data2vec-audio-base-960h
 
 # dir
 dirname: data/Dataset/Train
